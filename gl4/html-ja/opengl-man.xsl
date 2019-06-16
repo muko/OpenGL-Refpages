@@ -89,6 +89,6 @@
         <xsl:apply-templates select="."/>
     </xsl:template>
 
-    <xsl:template match="*[@lang!='en']" />
+    <xsl:template match="*[@lang!='ja']" />
 
 </xsl:stylesheet>
