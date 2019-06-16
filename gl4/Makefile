@@ -15,8 +15,11 @@
 # XML validation tool
 JING = jing
 
+# html directories
+HTML = html html-ja
+
 default clean:
-	cd html ; $(MAKE) $@
+	for dir in $(HTML) ; do (cd $$dir && $(MAKE) $@) ; done
 
 XIFILES = baseformattable.xml \
 	  compressedformattable.xml \
