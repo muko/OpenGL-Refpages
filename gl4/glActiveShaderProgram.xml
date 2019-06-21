@@ -15,7 +15,8 @@
     </refmeta>
     <refnamediv>
         <refname>glActiveShaderProgram</refname>
-        <refpurpose>set the active program object for a program pipeline object</refpurpose>
+        <refpurpose lang="en">set the active program object for a program pipeline object</refpurpose>
+	<refpurpose lang="ja">アクティブプログラムオブジェクトをプログラムパイプライン オブジェクトへ設定します</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -31,16 +32,22 @@
         <varlistentry>
             <term><parameter>pipeline</parameter></term>
             <listitem>
-            <para>
+            <para lang="en">
                 Specifies the program pipeline object to set the active program object for.
+            </para>
+            <para lang="ja">
+                アクティブプログラムオブジェクトを設定するプログラムパイプラインオブジェクトを指定します。
             </para>
             </listitem>
         </varlistentry>
         <varlistentry>
             <term><parameter>program</parameter></term>
             <listitem>
-            <para>
+            <para lang="en">
                 Specifies the program object to set as the active program pipeline object <parameter>pipeline</parameter>.
+            </para>
+            <para lang="ja">
+                アクティブプログラムパイプラインオブジェクト <parameter>pipeline</parameter> として設定するプログラムオブジェクトを指定します。
             </para>
             </listitem>
         </varlistentry>

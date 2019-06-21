@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glBeginQuery</refname>
-        <refpurpose>delimit the boundaries of a query object</refpurpose>
+        <refpurpose lang="en">delimit the boundaries of a query object</refpurpose>
+        <refpurpose lang="ja">クエリーオブジェクトの境界を分離します</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -41,7 +42,7 @@
         <varlistentry>
             <term><parameter>target</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies the target type of query object established between
                     <function>glBeginQuery</function> and the subsequent <!-- FIX: link to glBeginQuery --> <function>glEndQuery</function>.
                     The symbolic constant must be one of <constant>GL_SAMPLES_PASSED</constant>, <constant>GL_ANY_SAMPLES_PASSED</constant>,
@@ -49,13 +50,23 @@
                     <constant>GL_PRIMITIVES_GENERATED</constant>, <constant>GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN</constant>, or
                     <constant>GL_TIME_ELAPSED</constant>.
                 </para>
+                <para lang="ja">
+                    <function>glBeginQuery</function> と後続の<!-- FIX: link to glBeginQuery --> <function>glEndQuery</function> の間で確立されたクエリーオブジェクトのターゲットの型を指定します。
+                    シンボル定数は<constant>GL_SAMPLES_PASSED</constant>, <constant>GL_ANY_SAMPLES_PASSED</constant>,
+                    <constant>GL_ANY_SAMPLES_PASSED_CONSERVATIVE</constant>,
+                    <constant>GL_PRIMITIVES_GENERATED</constant>, <constant>GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN</constant>, or
+                    <constant>GL_TIME_ELAPSED</constant>の何れかでなければなりません。
+                </para>
             </listitem>
         </varlistentry>
         <varlistentry>
             <term><parameter>id</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies the name of a query object.
+                </para>
+                <para lang="ja">
+                    クエリーオブジェクトの名前を指定します。
                 </para>
             </listitem>
         </varlistentry>

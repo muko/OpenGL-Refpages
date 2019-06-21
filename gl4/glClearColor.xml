@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glClearColor</refname>
-        <refpurpose>specify clear values for the color buffers</refpurpose>
+        <refpurpose lang="en">specify clear values for the color buffers</refpurpose>
+	    <refpurpose lang="ja">カラーバッファーのクリアー色を指定します</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -40,17 +41,21 @@
             <term><parameter>blue</parameter></term>
             <term><parameter>alpha</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specify the red, green, blue, and alpha values used when the
                     color buffers are cleared.
                     The initial values are all 0.
+                </para>
+                <para lang="ja">
+                    カラーバッファーをクリアーする際の赤 (red)、緑 (green)、青 (blue)、アルファの値を指定します。
+                    初期値は全て 0 です。
                 </para>
             </listitem>
         </varlistentry>
         </variablelist>
     </refsect1>
     <refsect1 xml:id="description"><title>Description</title>
-        <para>
+        <para lang="en">
             <function>glClearColor</function> specifies the red,
             green,
             blue,
@@ -64,9 +69,25 @@
                 </mml:mfenced>
             </mml:math></inlineequation>.
         </para>
+        <para lang="ja">
+            <function>glClearColor</function> は <citerefentry><refentrytitle>glClear</refentrytitle></citerefentry> によってカラーバッファーをクリアーする際に
+            赤、
+	    緑、
+	    青、
+	    アルファの各値を指定します。
+            <function>glClearColor</function> で指定された値は
+            <inlineequation><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+                <!-- eqn: [0,1]: -->
+                <mml:mfenced open="[" close="]">
+                    <mml:mn>0</mml:mn>
+                    <mml:mn>1</mml:mn>
+                </mml:mfenced>
+            </mml:math></inlineequation>
+	    の範囲にクランプされます。
+        </para>
     </refsect1>
     <refsect1 xml:id="notes"><title>Notes</title>
-        <para>
+        <para lang="en">
             The type of the <parameter>red</parameter>,
             <parameter>green</parameter>, <parameter>blue</parameter>,
             and <parameter>alpha</parameter> parameters was changed from
@@ -74,6 +95,16 @@
             and is described in detail on the
             <citerefentry><refentrytitle>removedTypes</refentrytitle></citerefentry>
             page.
+        </para>
+        <para lang="ja">
+            パラメーター <parameter>red</parameter>、
+            <parameter>green</parameter>、 <parameter>blue</parameter>、
+            <parameter>alpha</parameter> の型は
+            GLclampf から GLfloat へ変更されました。
+	    この変更はユーザーコードへ透過的です。
+	    変更の詳細は
+            <citerefentry><refentrytitle>removedTypes</refentrytitle></citerefentry>
+            を参照して下さい。
         </para>
     </refsect1>
     <refsect1 xml:id="associatedgets"><title>Associated Gets</title>

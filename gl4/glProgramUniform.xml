@@ -52,7 +52,8 @@
         <refname>glProgramUniformMatrix4x2fv</refname>
         <refname>glProgramUniformMatrix3x4fv</refname>
         <refname>glProgramUniformMatrix4x3fv</refname>
-        <refpurpose>Specify the value of a uniform variable for a specified program object</refpurpose>
+        <refpurpose lang="en">Specify the value of a uniform variable for a specified program object</refpurpose>
+        <refpurpose lang="ja">指定したプログラムオブジェクトへユニフォーム変数の値を指定します</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
     <funcsynopsis>
@@ -311,42 +312,55 @@
         <varlistentry>
         <term><parameter>program</parameter></term>
         <listitem>
-            <para>Specifies the handle of the program containing the uniform
+            <para lang="en">Specifies the handle of the program containing the uniform
             variable to be modified.</para>
+            <para lang="ja">変更したいユニフォーム変数が含まれるプログラムのハンドルを指定します。</para>
         </listitem>
         </varlistentry>
         <varlistentry>
         <term><parameter>location</parameter></term>
         <listitem>
-            <para>Specifies the location of the uniform variable
+            <para lang="en">Specifies the location of the uniform variable
             to be modified.</para>
+            <para lang="ja">変更したいユニフォーム変数の位置を指定します。</para>
         </listitem>
         </varlistentry>
         <varlistentry>
         <term><parameter>count</parameter></term>
         <listitem>
-            <para>
+            <para lang="en">
                 For the vector commands
                 (<function>glProgramUniform*v</function>), specifies the
                 number of elements that are to be modified. This should be 1
                 if the targeted uniform variable is not an array, and 1 or
                 more if it is an array.
             </para>
-            <para>
+            <para lang="ja">
+                ベクトル命令(<function>glProgramUniform*v</function>)に於いては、変更したい要素の数を指定します。
+		対象のユニフォーム変数が配列ではない場合は1であり、配列の場合は1以上でなければなりません。
+            </para>
+            <para lang="en">
                 For the matrix commands
                 (<function>glProgramUniformMatrix*</function>), specifies
                 the number of matrices that are to be modified. This should
                 be 1 if the targeted uniform variable is not an array of
                 matrices, and 1 or more if it is an array of matrices.
             </para>
+            <para lang="ja">
+                行列命令(<function>glProgramUniformMatrix*</function>)に於いては、変更する行列の数を指定します。
+		対象のユニフォーム変数が行列の配列ではない場合は1であり、行列の配列の場合は1以上でなければなりません。
+            </para>
         </listitem>
         </varlistentry>
         <varlistentry>
         <term><parameter>transpose</parameter></term>
         <listitem>
-            <para>
+            <para lang="en">
                 For the matrix commands, specifies whether to transpose the
                 matrix as the values are loaded into the uniform variable.
+            </para>
+            <para lang="ja">
+                行列命令に於いて、ユニフォーム変数へロードする際に転置するかどうかを指定します。
             </para>
         </listitem>
         </varlistentry>
@@ -358,19 +372,25 @@
             <parameter>v3</parameter>
         </term>
         <listitem>
-            <para>
+            <para lang="en">
                 For the scalar commands, specifies the new values to be used
                 for the specified uniform variable.
+            </para>
+            <para lang="ja">
+                スカラー命令に於いて、指定されたユニフォーム変数に使用される新しい値を指定します。
             </para>
         </listitem>
         </varlistentry>
         <varlistentry>
         <term><parameter>value</parameter></term>
         <listitem>
-            <para>
+            <para lang="en">
                 For the vector and matrix commands, specifies a pointer to
                 an array of <parameter>count</parameter> values that will be
                 used to update the specified uniform variable.
+            </para>
+            <para lang="ja">
+	        ベクトル命令及び行列命令に於いて、指定されたユニフォーム変数を更新するために使用される値が格納された配列のポインターを<parameter>count</parameter> に指定します。
             </para>
         </listitem>
         </varlistentry>

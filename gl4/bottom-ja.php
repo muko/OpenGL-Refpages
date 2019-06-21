@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>OpenGL 4 Reference Pages</title>
+<title>OpenGL 4 リファレンスページ</title>
 </head>
 <frameset cols="280,*">
   <frame frameborder="0" marginwidth="0" marginheight="0" src="html-ja/indexflat.php">

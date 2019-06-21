@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glFlush</refname>
-        <refpurpose>force execution of GL commands in finite time</refpurpose>
+        <refpurpose lang="en">force execution of GL commands in finite time</refpurpose>
+        <refpurpose lang="ja">有限時間内にGLコマンドを強制実行します</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -29,8 +30,10 @@
             </funcprototype>
         </funcsynopsis>
     </refsynopsisdiv>
-    <refsect1 xml:id="description"><title>Description</title>
-        <para>
+    <refsect1 xml:id="description">
+        <title lang="en">Description</title>
+        <title lang="ja">説明</title>
+        <para lang="en">
             Different GL implementations buffer commands in several different locations,
             including network buffers and the graphics accelerator itself.
             <function>glFlush</function> empties all of these buffers,
@@ -39,6 +42,11 @@
             Though this execution may not be completed in any particular
             time period,
             it does complete in finite time.
+        </para>
+        <para lang="ja">
+	    ネットワークバッファーやグラフィックアクセラレーター自身を含むいくつかの異なる場所に命令はバッファーされます。
+            <function>glFlush</function> はこれら全てのバッファーを空にし、発行済みの全ての命令が実際のレンダリングエンジンによって受け入れられると直ちに実行されるようにします。
+            この実行時間は一定ではありませんが、有限時間で完了します。
         </para>
         <para>
             Because any GL program might be executed over a network,

@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glGenBuffers</refname>
-        <refpurpose>generate buffer object names</refpurpose>
+        <refpurpose lang="en">generate buffer object names</refpurpose>
+        <refpurpose lang="ja">バッファーオブジェクトの名前を生成します</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -35,41 +36,65 @@
         <varlistentry>
             <term><parameter>n</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies the number of buffer object names to be generated.
                 </para>
-            </listitem>
-        </varlistentry>
+                <para lang="ja">
+                    生成するバッファーオブジェクトの名前の数を指定します。
+                </para>
+            </listitem> 
+       </varlistentry>
         <varlistentry>
             <term><parameter>buffers</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies an array in which the generated buffer object names are stored.
+                </para>
+                <para lang="ja">
+                    生成されたバッファーオブジェクトの名前を格納する配列を指定します。
                 </para>
             </listitem>
         </varlistentry>
         </variablelist>
     </refsect1>
-    <refsect1 xml:id="description"><title>Description</title>
-        <para>
+    <refsect1 xml:id="description">
+        <title lang="en">Description</title>
+	<title lang="ja">説明</title>
+        <para lang="en">
             <function>glGenBuffers</function> returns <parameter>n</parameter> buffer object names in <parameter>buffers</parameter>.
             There is no guarantee that the names form a contiguous set of integers;
             however, it is guaranteed that none of the returned names was in use
             immediately before the call to <function>glGenBuffers</function>.
         </para>
-        <para>
+        <para lang="ja">
+            <function>glGenBuffers</function> は <parameter>n</parameter> 個のバッファーオブジェクトの名前を <parameter>buffers</parameter> に返します。
+	    ただし、名前が連続した整数であることは保証されません。
+	    しかしながら、直前までに返された名前が使用されていないことは保証されます。
+        </para>
+        <para lang="en">
             Buffer object names returned by a call to <function>glGenBuffers</function> are not returned by
             subsequent calls, unless they are first deleted with
             <citerefentry><refentrytitle>glDeleteBuffers</refentrytitle></citerefentry>.
         </para>
-        <para>
+        <para lang="ja">
+            <function>glGenBuffers</function> によって返されたバッッファーオブジェクトの名前は、 <citerefentry><refentrytitle>glDeleteBuffers</refentrytitle></citerefentry> によって削除されない限り、その後の呼び出しでは返されません。
+        </para>
+        <para lang="en">
             No buffer objects are associated with the returned buffer object names until they are first bound by calling
             <citerefentry><refentrytitle>glBindBuffer</refentrytitle></citerefentry>.
         </para>
+        <para lang="ja">
+            <citerefentry><refentrytitle>glBindBuffer</refentrytitle></citerefentry> によって返されたバッファーオブジェクトの名前は、最初にバインドされるまでバッファーオブジェクトは関連付けられていません。
+        </para>
     </refsect1>
-    <refsect1 xml:id="errors"><title>Errors</title>
-        <para>
+    <refsect1 xml:id="errors">
+        <title lang="en">Errors</title>
+        <title lang="ja">エラー</title>
+        <para lang="en">
             <constant>GL_INVALID_VALUE</constant> is generated if <parameter>n</parameter> is negative.
+        </para>
+        <para lang="ja">
+            <constant>GL_INVALID_VALUE</constant> は、 <parameter>n</parameter> が負数の時に返されます。
         </para>
     </refsect1>
     <refsect1 xml:id="associatedgets"><title>Associated Gets</title>

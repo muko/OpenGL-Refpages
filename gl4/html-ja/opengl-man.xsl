@@ -77,7 +77,7 @@
 
         <title>
             <xsl:copy-of select="$title"/>
-            <xsl:text> - OpenGL 4 Reference Pages</xsl:text>
+            <xsl:text> - OpenGL 4 リファレンスページ</xsl:text>
         </title>
     </xsl:template>
 

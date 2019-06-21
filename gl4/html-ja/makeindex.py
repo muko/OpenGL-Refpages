@@ -48,7 +48,7 @@ notAlias = False
 isAlias = True
 
 # Page title
-pageTitle = 'OpenGL 4.x Reference Pages'
+pageTitle = 'OpenGL 4.x リファレンスページ'
 
 # Docbook source and generated HTML file extensions
 srcext = '.xml'
@@ -172,6 +172,7 @@ def printHeader(fp, flatMenu = False, letters = None, altMenu = None):
 
     print('<html>',
           '<head>',
+          '    <meta charset="UTF-8" />',
           '    <link rel="stylesheet" type="text/css" href="style-index.css" />',
           '    <title>' + pageTitle + '</title>',
                scriptInclude,
@@ -181,11 +182,11 @@ def printHeader(fp, flatMenu = False, letters = None, altMenu = None):
 
     if (altMenu):
         if (flatMenu):
-            altLabel = '(accordion-style)'
+            altLabel = '(アコーディオンスタイル)'
         else:
-            altLabel = '(flat)'
+            altLabel = '(フラット)'
         print('    <a href="' + altMenu + '">' +
-              'Use alternate ' + altLabel + ' index' +
+              '代替 ' + altLabel + ' のインデックスを使用する' +
               '</a>', file=fp)
 
     if (letters):
@@ -201,7 +202,7 @@ def printHeader(fp, flatMenu = False, letters = None, altMenu = None):
     print('    <div id="navwrap">',
           '    <ul id="containerul"> <!-- Must wrap entire list for expand/contract -->',
           '    <li class="Level1">',
-          '        <a href="start.html" target="pagedisplay">Introduction</a>',
+          '        <a href="start.html" target="pagedisplay">序</a>',
           '    </li>',
           sep='\n', file=fp)
 
@@ -298,8 +299,8 @@ def genDict(dict, title, whichKeys, fp):
 fp = open(accordfilename, 'w')
 printHeader(fp, flatMenu = False, altMenu = flatfilename)
 
-genDict(refIndex, 'API Entry Points', 'api', fp)
-genDict(refIndex, 'GLSL Functions', 'glsl', fp)
+genDict(refIndex, 'API エントリーポイント', 'api', fp)
+genDict(refIndex, 'GLSL 関数', 'glsl', fp)
 
 printFooter(fp, flatMenu = False)
 fp.close()
@@ -316,7 +317,7 @@ letters.sort()
 
 printHeader(fp, flatMenu = True, letters = letters, altMenu = accordfilename)
 
-genDict(refIndex, 'API and GLSL Index', 'all', fp)
+genDict(refIndex, 'API and GLSL インデックス', 'all', fp)
 
 printFooter(fp, flatMenu = True)
 fp.close()

@@ -18,7 +18,8 @@
     <refnamediv>
         <refname>glMapBuffer</refname>
         <refname>glMapNamedBuffer</refname>
-        <refpurpose>map all of a buffer object's data store into the client's address space</refpurpose>
+        <refpurpose lang="en">map all of a buffer object's data store into the client's address space</refpurpose>
+        <refpurpose lang="ja">全てのバッファーオブジェクトのデータストアをクライアントのアドレス空間へマップします</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -39,10 +40,13 @@
         <varlistentry>
             <term><parameter>target</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies the target to which the buffer object is bound
                     for <function>glMapBuffer</function>, which must be one
                     of the buffer binding targets in the following table:
+                </para>
+                <para lang="en">
+                    <function>glMapBuffer</function> に於いて、バッファーオブジェクトにバインドされるターゲットを指定します。尚、下表のバッファーバインディングターゲットの一つでなければなりません。
                 </para>
                 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="bufferbindings.xml"/>
             </listitem>
@@ -50,9 +54,12 @@
         <varlistentry>
             <term><parameter>buffer</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies the name of the buffer object for
                     <function>glMapNamedBuffer</function>.
+                </para>
+                <para lang="ja">
+                    <function>glMapNamedBuffer</function> に於いて、バッファーオブジェクトのハンドルを指定します。
                 </para>
             </listitem>
         </varlistentry>

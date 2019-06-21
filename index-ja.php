@@ -7,17 +7,16 @@ $static_breadcrumb = array(
 include_once("../../assets/static_pages/khr_page_top.php");
 ?>
 
-<h1 class="pagetitle"> OpenGL&reg; and OpenGL&reg; ES Reference Pages </h1>
+<h1 class="pagetitle"> OpenGL&reg; 及び OpenGL&reg; ES リファレンスページ </h1>
 <div id="mainformat">
 
-<p> Complete descriptions of API commands and shading language functions are
-    provided for the current versions these APIs. </p>
+<p> 現在のバージョンの API について API コマンドとシェーディング言語の関数の詳細を提供する。
 
-<h2> Current API Versions </h2>
+<h2> 現在の API バージョン </h2>
 
 <ul>
 <li> <p> <a href="es3/"> OpenGL ES 3.2 and OpenGL ES Shading Language 3.20 </a> </p> </li>
-<li> <p> <a href="gl4/index-ja.php"> OpenGL 4.5 and OpenGL Shading Language 4.50 </a></p> </li>
+<li> <p> <a href="gl4/index-ja.php"> OpenGL 4.5 及び OpenGL シェーディング言語 4.50 </a></p> </li>
 </ul>
 
 <h2> Older API Versions </h2>
@@ -42,12 +41,14 @@ include_once("../../assets/static_pages/khr_page_top.php");
      (ncluding GLX, GLU, and fixed-function GL compatibility profile APIs) </p> </li>
 </ul>
 
-<h2> Reference Page Sources </h2>
+<h2> リファレンスページのソース </h2>
 
-<p> The Docbook source for the reference pages is available from the <a
-    href="https://github.com/KhronosGroup/OpenGL-Refpages"> OpenGL-Refpages
-    </a> github repository. </p>
-
+<p> リファレンスページは Docbook で作成されており、
+<a href="https://github.com/KhronosGroup/OpenGL-Refpages"> OpenGL-Refpages
+    </a> github リポジトリから入手できます。
+(日本語版は
+<a href="https://github.com/muko/OpenGL-Refpages"> muko/OpenGL-RefPages </a> github リポジトリから入手できます。)
+</p>
 
 <h1> API Reference Cards </h1>
 
