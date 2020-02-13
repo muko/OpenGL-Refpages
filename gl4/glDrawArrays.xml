@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glDrawArrays</refname>
-        <refpurpose>render primitives from array data</refpurpose>
+        <refpurpose lang="en">render primitives from array data</refpurpose>
+        <refpurpose lang="ja">配列データからプリミティブを描画します</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -36,7 +37,7 @@
         <varlistentry>
             <term><parameter>mode</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies what kind of primitives to render.
                     Symbolic constants
                     <constant>GL_POINTS</constant>,
@@ -52,28 +53,53 @@
                     <constant>GL_TRIANGLES_ADJACENCY</constant> and <constant>GL_PATCHES</constant>
                     are accepted.
                 </para>
+                <para lang="ja">
+                    レンダリングするプリミティブの種類を指定します。
+                    許可されるシンボル定数は、
+                    <constant>GL_POINTS</constant>,
+                    <constant>GL_LINE_STRIP</constant>,
+                    <constant>GL_LINE_LOOP</constant>,
+                    <constant>GL_LINES</constant>,
+                    <constant>GL_LINE_STRIP_ADJACENCY</constant>,
+                    <constant>GL_LINES_ADJACENCY</constant>,
+                    <constant>GL_TRIANGLE_STRIP</constant>,
+                    <constant>GL_TRIANGLE_FAN</constant>,
+                    <constant>GL_TRIANGLES</constant>,
+                    <constant>GL_TRIANGLE_STRIP_ADJACENCY</constant>,
+                    <constant>GL_TRIANGLES_ADJACENCY</constant>,
+		    <constant>GL_PATCHES</constant>
+                    です。
+                </para>
             </listitem>
         </varlistentry>
         <varlistentry>
             <term><parameter>first</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies the starting index in the enabled arrays.
+                </para>
+                <para lang="ja">
+                    有効な配列の開始インデックスを指定します。
                 </para>
             </listitem>
         </varlistentry>
         <varlistentry>
             <term><parameter>count</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies the number of indices to be rendered.
+                </para>
+                <para lang="ja">
+                    描画するインデックスの数を指定します。
                 </para>
             </listitem>
         </varlistentry>
         </variablelist>
     </refsect1>
-    <refsect1 xml:id="description"><title>Description</title>
-        <para>
+    <refsect1 xml:id="description">
+        <title lang="en">Description</title>
+        <title lang="ja">説明</title>
+        <para lang="en">
             <function>glDrawArrays</function> specifies multiple geometric primitives
             with very few subroutine calls. Instead of calling a GL procedure
             to pass each individual vertex, normal, texture coordinate, edge
@@ -82,18 +108,29 @@
             construct a sequence of primitives with a single
             call to <function>glDrawArrays</function>.
         </para>
-        <para>
+        <para lang="ja">
+            <function>glDrawArrays</function> は、非常に少ないサブルーチンコールで複数のジオメトリープリミティブを指定します。
+            GLプロシージャーを呼び出して個々の頂点、法線、テクスチャ座標、エッジフラグ、または色を渡す代わりに、<function>glDrawArrays</function> を1回呼び出すことで、事前に指定された頂点、法線、および色の個別の配列からプリミティブのシーケンスを構築できます。
+        </para>
+        <para lang="en">
             When <function>glDrawArrays</function> is called, it uses <parameter>count</parameter> sequential elements from each
             enabled array to construct a sequence of geometric primitives,
             beginning with element <parameter>first</parameter>. <parameter>mode</parameter> specifies what kind of
             primitives are constructed and how the array elements
             construct those primitives.
         </para>
-        <para>
+        <para lang="ja">
+            <function>glDrawArrays</function> が呼び出されると、有効な各配列から <parameter>count</parameter> 番目から <parameter>count</parameter> 個のシーケンシャルな要素を使用して、ジオメトリープリミティブのシーケンスを構築します。
+	    <parameter>mode</parameter> は、構築されるプリミティブの種類と配列からプリミティブを構築する方法を指定します。
+        </para>
+        <para lang="en">
             Vertex attributes that are modified by <function>glDrawArrays</function> have an
             unspecified value after <function>glDrawArrays</function> returns. Attributes that aren't
             modified remain well defined.
         </para>
+	<para lang="ja">
+            <function>glDrawArrays</function> から処理が返った後、<function>glDrawArrays</function> によって変更された頂点属性には値が指定されていません。 変更されない属性は、明確に定義されたままです。
+	</para>
     </refsect1>
     <refsect1 xml:id="notes"><title>Notes</title>
         <para>

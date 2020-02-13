@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glBindBuffer</refname>
-        <refpurpose>bind a named buffer object</refpurpose>
+        <refpurpose lang="en">bind a named buffer object</refpurpose>
+        <refpurpose lang="ja">名前付きバッファーオブジェクトをバインドします</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -35,10 +36,13 @@
         <varlistentry>
             <term><parameter>target</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies the target to which the buffer object is
                     bound, which must be one of the buffer binding targets
                     in the following table:
+                </para>
+                <para lang="ja">
+                    バッファーオブジェクトがバインドされるターゲットを指定します。これは、次の表のバッファーバインディングターゲットのいずれかである必要があります。
                 </para>
                 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="bufferbindings.xml"/>
             </listitem>
@@ -46,22 +50,32 @@
         <varlistentry>
             <term><parameter>buffer</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies the name of a buffer object.
+                </para>
+                <para lang="ja">
+                    バッファーオブジェクトの名前を指定します。
                 </para>
             </listitem>
         </varlistentry>
         </variablelist>
     </refsect1>
-    <refsect1 xml:id="description"><title>Description</title>
-        <para>
+    <refsect1 xml:id="description">
+        <title lang="en">Description</title>
+        <title lang="ja">説明</title>
+        <para lang="en">
             <function>glBindBuffer</function> binds a buffer object to the specified buffer binding point. Calling <function>glBindBuffer</function> with
             <parameter>target</parameter> set to one of the accepted symbolic constants and <parameter>buffer</parameter> set to the name
             of a buffer object binds that buffer object name to the target. If no buffer object with name <parameter>buffer</parameter>
             exists, one is created with that name. When a buffer object is bound to a target, the previous binding for that
             target is automatically broken.
         </para>
-        <para>
+        <para lang="en">
+            <function>glBindBuffer</function> は、バッファーオブジェクトを指定されたバッファーバインディングポイントにバインドします。
+	    受け入れられたシンボル定数のいずれかにターゲットを設定し、バッファオブジェクトの名前に設定されたバッファで <function>glBindBuffer</function> を呼び出すと、そのバッファオブジェクト名がターゲットにバインドされます。
+	    名前 <parameter>buffer</parameter> のバッファオブジェクトが存在しない場合、その名前で作成されます。 バッファオブジェクトがターゲットにバインドされると、そのターゲットの以前のバインドは自動的に解除されます。
+        </para>
+        <para lang="en">
             Buffer object names are unsigned integers. The value zero is reserved, but
             there is no default buffer object for each buffer object target. Instead, <parameter>buffer</parameter> set to zero
             effectively unbinds any buffer object previously bound, and restores client memory usage for that buffer object target (if supported for that target).
@@ -71,8 +85,18 @@
             two rendering contexts share buffer object names only if they
             explicitly enable sharing between contexts through the appropriate GL windows interfaces functions.
         </para>
-        <para>
+        <para lang="ja">
+            バッファーオブジェクト名は符号なし整数です。
+	    0 は予約済みですが、バッファーオブジェクトターゲットごとにデフォルトのバッファーオブジェクトはありません。
+	    代わりに、0 に設定された <parameter>buffer</parameter> は、以前にバインドされたバッファーオブジェクトのバインドを事実上解除し、そのバッファーオブジェクトターゲットのクライアントメモリー使用量が回復します（そのターゲットでサポートされている場合）。
+	    バッファーオブジェクト名と対応するバッファーオブジェクトのコンテキストは、カレントのGLレンダリングコンテキストの共有オブジェクトスペースに対してローカルです。
+	    2つのレンダリングコンテキストは、適切なGLウィンドウインターフェイス関数を介してコンテキスト間の共有を明示的に有効にしている場合にのみ、バッファーオブジェクト名を共有します。
+        </para>
+        <para lang="en">
             <citerefentry><refentrytitle>glGenBuffers</refentrytitle></citerefentry> must be used to generate a set of unused buffer object names.
+        </para>
+        <para lang="ja">
+            未使用のバッファオブジェクト名のセットは、<citerefentry><refentrytitle>glGenBuffers</refentrytitle></citerefentry> によって生成する必要があります。
         </para>
         <para>
             The state of a buffer object immediately after it is first bound is an unmapped zero-sized memory buffer with

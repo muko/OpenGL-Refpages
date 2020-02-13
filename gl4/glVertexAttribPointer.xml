@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glVertexAttribPointer</refname>
-        <refpurpose>define an array of generic vertex attribute data</refpurpose>
+        <refpurpose lang="en">define an array of generic vertex attribute data</refpurpose>
+        <refpurpose lang="ja">汎用頂点属性データの配列を定義します</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
     <funcsynopsis>
@@ -55,23 +56,36 @@
         <varlistentry>
         <term><parameter>index</parameter></term>
         <listitem>
-            <para>Specifies the index of the generic vertex
-            attribute to be modified.</para>
+            <para lang="en">
+              Specifies the index of the generic vertex
+              attribute to be modified.
+	    </para>
+            <para lang="ja">
+               変更する汎用頂点属性のインデックスを指定します。
+	    </para>
         </listitem>
         </varlistentry>
         <varlistentry>
         <term><parameter>size</parameter></term>
         <listitem>
-            <para>Specifies the number of components per
-            generic vertex attribute. Must
-            be 1, 2, 3, 4. Additionally, the symbolic constant <constant>GL_BGRA</constant>
-            is accepted by <function>glVertexAttribPointer</function>. The initial value is 4.</para>
+            <para lang="en">
+	      Specifies the number of components per
+              generic vertex attribute. Must
+              be 1, 2, 3, 4. Additionally, the symbolic constant <constant>GL_BGRA</constant>
+              is accepted by <function>glVertexAttribPointer</function>. The initial value is 4.
+	    </para>
+	    <para lang="ja">
+	      汎用頂点属性のコンポーネントの数を指定します。
+	      1、2、3、4 である必要があります。
+	      さらに、シンボル定数 <constant>GL_BGRA</constant> は <function>glVertexAttribPointer</function> で利用できます。
+	      初期値は 4 です。
+	    </para>
         </listitem>
         </varlistentry>
         <varlistentry>
         <term><parameter>type</parameter></term>
         <listitem>
-            <para>Specifies the data type of each component in
+            <para lang="en">Specifies the data type of each component in
             the array. The symbolic constants
             <constant>GL_BYTE</constant>,
             <constant>GL_UNSIGNED_BYTE</constant>,
@@ -89,39 +103,71 @@
             <constant>GL_DOUBLE</constant> is also accepted by <function>glVertexAttribLPointer</function> and is
             the only token accepted by the <parameter>type</parameter> parameter for that function.
             The initial value is <constant>GL_FLOAT</constant>.</para>
+            <para lang="ja">配列内の各コンポーネントのデータ型を指定します。 
+            シンボル定数
+            <constant>GL_BYTE</constant>,
+            <constant>GL_UNSIGNED_BYTE</constant>,
+            <constant>GL_SHORT</constant>,
+            <constant>GL_UNSIGNED_SHORT</constant>,
+            <constant>GL_INT</constant> 及び
+            <constant>GL_UNSIGNED_INT</constant> は <function>glVertexAttribPointer</function> と <function>glVertexAttribIPointer</function>で利用できます。
+	    更に、
+            <constant>GL_HALF_FLOAT</constant>,
+            <constant>GL_FLOAT</constant>,
+            <constant>GL_DOUBLE</constant>,
+            <constant>GL_FIXED</constant>,
+            <constant>GL_INT_2_10_10_10_REV</constant>,
+            <constant>GL_UNSIGNED_INT_2_10_10_10_REV</constant> 及び
+            <constant>GL_UNSIGNED_INT_10F_11F_11F_REV</constant> は <function>glVertexAttribPointer</function> で利用できます。
+            <constant>GL_DOUBLE</constant> は <function>glVertexAttribLPointer</function> でも利用でき、その関数の <parameter>type</parameter> パラメーターで利用できる唯一のトークンです。 
+            初期値は <constant>GL_FLOAT</constant>です。
+	    </para>
         </listitem>
         </varlistentry>
         <varlistentry>
         <term><parameter>normalized</parameter></term>
         <listitem>
-            <para>For <function>glVertexAttribPointer</function>, specifies whether fixed-point data values
+            <para lang="en">For <function>glVertexAttribPointer</function>, specifies whether fixed-point data values
             should be normalized (<constant>GL_TRUE</constant>)
             or converted directly as fixed-point values
             (<constant>GL_FALSE</constant>) when they are
             accessed.</para>
+            <para lang="ja"><function>glVertexAttribPointer</function> の場合、アクセス時に固定小数点データ値を正規化する（<constant>GL_TRUE</constant>）か、固定小数点値として直接変換する（<constant>GL_FALSE</constant>）かを指定します。
+	    </para>
         </listitem>
         </varlistentry>
         <varlistentry>
         <term><parameter>stride</parameter></term>
         <listitem>
-            <para>Specifies the byte offset between consecutive
+            <para lang="en">Specifies the byte offset between consecutive
             generic vertex attributes. If <parameter>stride</parameter>
             is 0, the generic vertex attributes are
             understood to be tightly packed in the
             array. The initial value is 0.</para>
+            <para lang="ja">
+	      連続する汎用頂点属性間のバイトオフセットを指定します。
+	      <parameter>stride</parameter> が 0 の場合、汎用頂点属性は配列に密にパックされていると理解されます。
+	      初期値は 0 です。
+	    </para>
         </listitem>
         </varlistentry>
         <varlistentry>
         <term><parameter>pointer</parameter></term>
         <listitem>
-            <para>Specifies a offset of the first component of the first generic vertex attribute in the array in the data store of the
+            <para lang="en">Specifies a offset of the first component of the first generic vertex attribute in the array in the data store of the
             buffer currently bound to the <constant>GL_ARRAY_BUFFER</constant> target. The initial value is 0.</para>
+            <para lang="ja">
+	      <constant>GL_ARRAY_BUFFER</constant> の対象として現在バインドされているバッファのデータストア内の配列内の最初の汎用頂点属性の最初のコンポーネントのオフセットを指定します。
+	      初期値は 0 です。
+	    </para>
         </listitem>
         </varlistentry>
     </variablelist>
     </refsect1>
-    <refsect1 xml:id="description"><title>Description</title>
-        <para>
+    <refsect1 xml:id="description">
+        <title lang="en">Description</title>
+        <title lang="ja">説明</title>
+        <para lang="en">
             <function>glVertexAttribPointer</function>, <function>glVertexAttribIPointer</function> and <function>glVertexAttribLPointer</function>
             specify the
             location and data format of the array of generic vertex attributes at index <parameter>index</parameter>
@@ -130,7 +176,11 @@
             of each component, and <parameter>stride</parameter> specifies the byte stride from one attribute to the next,
             allowing vertices and attributes to be packed into a single array or stored in separate arrays.
         </para>
-        <para>
+        <para lang="ja">
+	    <function>glVertexAttribPointer</function>、<function>glVertexAttribIPointer</function>、<function>glVertexAttribLPointer</function> は、描画時に使用するインデックス <parameter>index</parameter> の汎用頂点属性の配列の位置とデータ形式を指定します。  <parameter>size</parameter> は、属性ごとのコンポーネントの数を指定し、1、2、3、4、または <constant>GL_BGRA</constant> でなければなりません。
+	    <parameter>type</parameter> は各コンポーネントのデータ型を指定し、<parameter>stride</parameter> は1つの属性から次の属性へのバイトストライドを指定します。これにより、頂点と属性を単一の配列にパックしたり、個別の配列に保存したりできます。
+        </para>
+        <para lang="en">
             For <function>glVertexAttribPointer</function>, if <parameter>normalized</parameter> is set to <constant>GL_TRUE</constant>,
             it indicates that values stored in an integer format are to be mapped to the range [-1,1] (for signed values) or [0,1] (for
             unsigned values) when they are accessed and converted to floating point. Otherwise, values will
@@ -141,12 +191,26 @@
             <constant>GL_UNSIGNED_BYTE</constant>, <constant>GL_SHORT</constant>, <constant>GL_UNSIGNED_SHORT</constant>,
             <constant>GL_INT</constant>, <constant>GL_UNSIGNED_INT</constant> are accepted. Values are always left as integer values.
         </para>
-        <para>
+        <para lang="ja">
+	    <function>glVertexAttribPointer</function> の場合、<parameter>normalized</parameter> に <constant>GL_TRUE</constant> が設定されていれば、整数形式で格納された値は、範囲[-1,1]（符号付きの場合）または[0,1]（符号なしの場合）の float に変換されます。 それ以外の場合、値は正規化せずに直接 float に変換されます。
+        </para>
+        <para lang="en">
+            For <function>glVertexAttribIPointer</function>, only the integer types <constant>GL_BYTE</constant>,
+            <constant>GL_UNSIGNED_BYTE</constant>, <constant>GL_SHORT</constant>, <constant>GL_UNSIGNED_SHORT</constant>,
+            <constant>GL_INT</constant>, <constant>GL_UNSIGNED_INT</constant> are accepted. Values are always left as integer values.
+        </para>
+        <para lang="ja">
+	    <function>glVertexAttribIPointer</function> の場合、整数型である <constant>GL_BYTE</constant>、<constant>GL_UNSIGNED_BYTE</constant>、<constant>GL_SHORT</constant>、<constant>GL_UNSIGNED_SHORT</constant>、<constant>GL_INT</constant>、<constant>GL_UNSIGNED_INT</constant> のみが受け入れられます。 値は常に整数値のままです。
+        </para>
+        <para lang="en">
             <function>glVertexAttribLPointer</function> specifies state for a generic vertex attribute array associated
             with a shader attribute variable declared with 64-bit double precision components. <parameter>type</parameter>
             must be <constant>GL_DOUBLE</constant>. <parameter>index</parameter>, <parameter>size</parameter>, and
             <parameter>stride</parameter> behave as described for <function>glVertexAttribPointer</function> and
             <function>glVertexAttribIPointer</function>.
+        </para>
+        <para lang="ja">
+            <function>glVertexAttribLPointer</function> は、64ビットの double で宣言されたシェーダー属性変数に関連付けられた汎用頂点属性配列の状態を指定します。 <parameter>type</parameter> は <constant>GL_DOUBLE</constant> でなければなりません。 <parameter>index</parameter>、<parameter>size</parameter>、および <parameter>stride</parameter> は、<function>glVertexAttribPointer</function> および<function>>glVertexAttribIPointer</function> の説明と同様に動作します。
         </para>
         <para>
             If <parameter>pointer</parameter> is not <code>NULL</code>, a non-zero named buffer object must be bound to the

@@ -13,7 +13,8 @@
     </refmeta>
     <refnamediv>
         <refname>glCreateBuffers</refname>
-        <refpurpose>create buffer objects</refpurpose>
+        <refpurpose lang="en">create buffer objects</refpurpose>
+        <refpurpose lang="ja">バッファーオブジェクトを生成する</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -29,29 +30,40 @@
             <varlistentry>
                 <term><parameter>n</parameter></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         Specifies the number of buffer objects to create.
+                    </para>
+                    <para lang="ja">
+                        生成するバッファーオブジェクトの数を指定します。
                     </para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>buffers</parameter></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         Specifies an array in which names of the new buffer
                         objects are stored.
+                    </para>
+                    <para lang="ja">
+                        新しいバッファーオブジェクトの名前が格納される配列を指定します。
                     </para>
                 </listitem>
             </varlistentry>
         </variablelist>
     </refsect1>
-    <refsect1 xml:id="description"><title>Description</title>
-        <para>
+    <refsect1 xml:id="description">
+        <title lang="en">Description</title>
+        <title lang="ja">説明</title>
+        <para lang="en">
             <function>glCreateBuffers</function> returns
             <parameter>n</parameter> previously unused buffer names in
             <parameter>buffers</parameter>, each representing a new buffer
             object initialized as if it had been bound to an unspecified
             target.
+        </para>
+        <para lang="ja">
+            <function>glCreateBuffers</function> は、<parameter>buffers</parameter> 内にこれまでに使用されていない <parameter>n</parameter> 個のバッファー名を返します。生成された各バッファー名は、指定されていないターゲットにバインドされているかのように初期化されます。
         </para>
     </refsect1>
     <refsect1 xml:id="errors"><title>Errors</title>
