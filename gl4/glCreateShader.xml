@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glCreateShader</refname>
-        <refpurpose>Creates a shader object</refpurpose>
+        <refpurpose lang="en">Creates a shader object</refpurpose>
+        <refpurpose lang="ja">シェーダーオブジェクトを作成する</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -34,19 +35,26 @@
             <varlistentry>
                 <term><parameter>shaderType</parameter></term>
                 <listitem>
-                    <para>Specifies the type of shader to be created.
+                    <para lang="en">Specifies the type of shader to be created.
                     Must be one of <constant>GL_COMPUTE_SHADER</constant>,
                     <constant>GL_VERTEX_SHADER</constant>,
                     <constant>GL_TESS_CONTROL_SHADER</constant>,
                     <constant>GL_TESS_EVALUATION_SHADER</constant>,
                     <constant>GL_GEOMETRY_SHADER</constant>,
                     or <constant>GL_FRAGMENT_SHADER</constant>.</para>
+                    <para lang="ja">作成するシェーダーのタイプを指定します。
+                    <constant>GL_COMPUTE_SHADER</constant>,
+                    <constant>GL_VERTEX_SHADER</constant>,
+                    <constant>GL_TESS_CONTROL_SHADER</constant>,
+                    <constant>GL_TESS_EVALUATION_SHADER</constant>,
+                    <constant>GL_GEOMETRY_SHADER</constant>,
+                    <constant>GL_FRAGMENT_SHADER</constant> のいずれかでなければなりません。</para>
                 </listitem>
             </varlistentry>
         </variablelist>
     </refsect1>
     <refsect1 xml:id="description"><title>Description</title>
-        <para><function>glCreateShader</function> creates an empty
+        <para lang="en"><function>glCreateShader</function> creates an empty
         shader object and returns a non-zero value by which it can be
         referenced. A shader object is used to maintain the source code
         strings that define a shader. <parameter>shaderType</parameter>
@@ -65,27 +73,42 @@
         run on the programmable geometry processor. A shader of
         type <constant>GL_FRAGMENT_SHADER</constant> is a shader that is
         intended to run on the programmable fragment processor.</para>
+        <para lang="ja"><function>glCreateShader</function> は、空のシェーダーオブジェクトを作成し、参照可能な 0 以外の値を返します。
+	シェーダーオブジェクトは、シェーダーを定義するソースコード文字列を保持するために使用されます。
+	<parameter>shaderType</parameter> は、作成されるシェーダーのタイプを示します。
+        5種類のシェーダーがサポートされています。
+        <constant>GL_COMPUTE_SHADER</constant> は、プログラマブルコンピューティングプロセッサーで実行することを目的としたシェーダーです。
+        <constant>GL_VERTEX_SHADER</constant> は、プログラム可能なバーテックスプロセッサーで実行することを目的としたシェーダーです。
+        <constant>GL_TESS_CONTROL_SHADER</constant> は、コントロールステージのプログラム可能なテッセレーションプロセッサーで実行することを目的としたシェーダーです。
+	<constant>GL_TESS_EVALUATION_SHADER</constant> は、評価ステージのプログラム可能なテッセレーションプロセッサーで実行することを目的としたシェーダーです。
+        <constant>GL_GEOMETRY_SHADER</constant> は、プログラム可能なジオメトリプロセッサーで実行することを目的としたシェーダーです。
+	<constant>GL_FRAGMENT_SHADER</constant> は、プログラム可能なフラグメントプロセッサーで実行することを目的としたシェーダーです。</para>
 
-        <para>When created, a shader object's
+        <para lang="en">When created, a shader object's
         <constant>GL_SHADER_TYPE</constant> parameter is set to either
         <constant>GL_COMPUTE_SHADER</constant>, <constant>GL_VERTEX_SHADER</constant>, <constant>GL_TESS_CONTROL_SHADER</constant>,
         <constant>GL_TESS_EVALUATION_SHADER</constant>, <constant>GL_GEOMETRY_SHADER</constant>
         or <constant>GL_FRAGMENT_SHADER</constant>, depending on the value
         of <parameter>shaderType</parameter>.</para>
+        <para lang="ja">シェーダーオブジェクトが作成されると、<parameter>shaderType</parameter> の値に応じ、<constant>GL_SHADER_TYPE</constant> のパラメーターには <constant>GL_COMPUTE_SHADER</constant>、 <constant>GL_VERTEX_SHADER</constant>、 <constant>GL_TESS_CONTROL_SHADER</constant>、<constant>GL_TESS_EVALUATION_SHADER</constant>、 <constant>GL_GEOMETRY_SHADER</constant>、 <constant>GL_FRAGMENT_SHADER</constant> のいずれかが設定されます。</para>
     </refsect1>
     <refsect1 xml:id="notes"><title>Notes</title>
-        <para>Like buffer and texture objects, the name space for
+        <para lang="en">Like buffer and texture objects, the name space for
         shader objects may be shared across a set of contexts, as long
         as the server sides of the contexts share the same address
         space. If the name space is shared across contexts, any attached
         objects and the data associated with those attached objects are
         shared as well.</para>
+        <para lang="ja">バッファーオブジェクトやテクスチャオブジェクトと同様に、シェーダーオブジェクトの名前空間は、サーバー側が同じアドレス空間でコンテキストを共有している限り、コンテキストのセット全体で共有できます。
+	名前空間がコンテキスト全体で共有される場合、関連するオブジェクトとそれらに付随するデータも共有されます。</para>
 
-        <para>Applications are responsible for providing the
+        <para lang="en">Applications are responsible for providing the
         synchronization across API calls when objects are accessed from
         different execution threads.</para>
+        <para lang="ja">アプリケーションは、オブジェクトが異なる実行スレッドからアクセスされたときに、全ての API 呼び出しを同期呼び出しに変換する責任があります。</para>
 
-        <para><constant>GL_COMPUTE_SHADER</constant> is available only if the GL version is 4.3 or higher.</para>
+        <para lang="en"><constant>GL_COMPUTE_SHADER</constant> is available only if the GL version is 4.3 or higher.</para>
+        <para lang="ja"><constant>GL_COMPUTE_SHADER</constant> は、GLバージョンが4.3以上の場合にのみ使用できます。</para>
     </refsect1>
     <refsect1 xml:id="errors"><title>Errors</title>
         <para>This function returns 0 if an error occurs creating the

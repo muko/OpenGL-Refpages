@@ -20,7 +20,7 @@
     <refnamediv>
         <refname>glCreateProgram</refname>
         <refpurpose lang="en">Creates a program object</refpurpose>
-        <refpurpose lang="ja">プログラムオブジェクトを作成するCreates a program object</refpurpose>
+        <refpurpose lang="ja">プログラムオブジェクトを作成する</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>

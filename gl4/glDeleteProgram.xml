@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glDeleteProgram</refname>
-        <refpurpose>Deletes a program object</refpurpose>
+        <refpurpose lang="en">Deletes a program object</refpurpose>
+        <refpurpose lang="ja">プログラムオブジェクトを削除する</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
     <funcsynopsis>
@@ -34,20 +35,23 @@
         <varlistentry>
         <term><parameter>program</parameter></term>
         <listitem>
-            <para>Specifies the program object to be
+            <para lang="en">Specifies the program object to be
             deleted.</para>
+            <para lang="ja">削除するプログラムオブジェクトを指定します。</para>
         </listitem>
         </varlistentry>
     </variablelist>
     </refsect1>
     <refsect1 xml:id="description"><title>Description</title>
-    <para><function>glDeleteProgram</function> frees the memory and
+    <para lang="en"><function>glDeleteProgram</function> frees the memory and
     invalidates the name associated with the program object
     specified by <parameter>program.</parameter> This command
     effectively undoes the effects of a call to
     <citerefentry><refentrytitle>glCreateProgram</refentrytitle></citerefentry>.</para>
+    <para lang="ja"><function>glDeleteProgram</function> はメモリを解放し、<parameter>program</parameter> で指定されたプログラムオブジェクトに関連付けられた名前を無効にします。
+    このコマンドは、<citerefentry><refentrytitle>glCreateProgram</refentrytitle></citerefentry> の呼び出しの効果を効果的に取り消します。</para>
 
-    <para>If a program object is in use as part of current rendering
+    <para lang="en">If a program object is in use as part of current rendering
     state, it will be flagged for deletion, but it will not be
     deleted until it is no longer part of current state for any
     rendering context. If a program object to be deleted has shader
@@ -57,12 +61,16 @@
     <citerefentry><refentrytitle>glDeleteShader</refentrytitle></citerefentry>.
     A value of 0 for <parameter>program</parameter> will be silently
     ignored.</para>
+    <para lang="ja"> プログラムオブジェクトがカレントの描画状態の一部として使用されている場合、削除のフラグが立てられますが、レンダリングコンテキストのカレントの状態の一部でなくなるまで削除されません。
+    削除するプログラムオブジェクトにシェーダーオブジェクトがアタッチされている場合、それらのシェーダーオブジェクトは自動的にデタッチされますが、<citerefentry><refentrytitle>glDeleteShader</refentrytitle></citerefentry> の以前の呼び出しによって削除フラグが既に設定されていない限り削除されません。
+    プログラムの値 0 は、静かに無視されます。</para>
 
-    <para>To determine whether a program object has been flagged for
+    <para lang="en">To determine whether a program object has been flagged for
     deletion, call
     <citerefentry><refentrytitle>glGetProgram</refentrytitle></citerefentry>
     with arguments <parameter>program</parameter> and
     <constant>GL_DELETE_STATUS</constant>.</para>
+    <para lang="ja">プログラムオブジェクトに削除のフラグが設定されているかどうかを判断するには、<citerefentry><refentrytitle>glGetProgram</refentrytitle></citerefentry> の引数に <parameter>program</parameter> と <constant>GL_DELETE_STATUS</constant> を指定して呼び出します。</para>
     </refsect1>
     <refsect1 xml:id="errors"><title>Errors</title>
     <para><constant>GL_INVALID_VALUE</constant> is generated if
