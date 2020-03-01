@@ -20,7 +20,7 @@
     <refnamediv>
         <refname>glLinkProgram</refname>
         <refpurpose lang="en">Links a program object</refpurpose>
-        <refpurpose lang="ja">プログラムオブジェクトをリンクする/refpurpose>
+        <refpurpose lang="ja">プログラムオブジェクトをリンクする</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
     <funcsynopsis>
@@ -85,7 +85,7 @@
     one at this time.</para>
     <para lang="ja">リンクが成功した結果、 <parameter>program</parameter> に属する全てのアクティブなユーザー定義のユニフォーム変数は 0 に初期化されます。
     そして、プログラムオブジェクトの各アクティブなユニフォーム変数には、<citerefentry><refentrytitle>glGetUniformLocation</refentrytitle></citerefentry> を呼び出して参照できる場所が割り当てられます。
-     また、汎用頂点属性インデックスにバインドされていないアクティブなユーザー定義の属性変数は、この時一つがバインドされます。</para>
+    また、汎用頂点属性インデックスにバインドされていないアクティブなユーザー定義の属性変数は、この時一つがバインドされます。</para>
 
     <para lang="en">Linking of a program object can fail for a number of
     reasons as specified in the <emphasis>OpenGL Shading Language
