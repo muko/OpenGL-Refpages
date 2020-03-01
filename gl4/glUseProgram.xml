@@ -109,11 +109,11 @@
         ただし、これはエラーではありません。
         </para>
 
-        <paralang="en">If <parameter>program</parameter> does not
+        <para lang="en">If <parameter>program</parameter> does not
         contain shader objects of type <constant>GL_FRAGMENT_SHADER</constant>, an
         executable will be installed on the vertex, and possibly geometry processors,
         but the results of fragment shader execution will be undefined.</para>
-        <paralang="ja"><parameter>program</parameter> に <constant>GL_FRAGMENT_SHADER</constant> タイプのシェーダーオブジェクトが含まれていない場合、実行可能オブジェクトはバーテックスプロセッサー、場合によってはジオメトリプロセッサーにインストールされますが、フラグメントシェーダーの実行結果は未定義になります。</para>
+        <para lang="ja"><parameter>program</parameter> に <constant>GL_FRAGMENT_SHADER</constant> タイプのシェーダーオブジェクトが含まれていない場合、実行可能オブジェクトはバーテックスプロセッサー、場合によってはジオメトリプロセッサーにインストールされますが、フラグメントシェーダーの実行結果は未定義になります。</para>
 
     </refsect1>
     <refsect1 xml:id="notes"><title>Notes</title>
