@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glUseProgram</refname>
-        <refpurpose>Installs a program object as part of current rendering state</refpurpose>
+        <refpurpose lang="en">Installs a program object as part of current rendering state</refpurpose>
+        <refpurpose lang="ja">カレントのレンダリング状態の一部としてプログラムオブジェクトをインストールします</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -34,15 +35,18 @@
             <varlistentry>
                 <term><parameter>program</parameter></term>
                 <listitem>
-                    <para>Specifies the handle of the program object
+                    <para lang="en">Specifies the handle of the program object
                     whose executables are to be used as part of current
                     rendering state.</para>
+                    <para lang="ja">
+                    カレントの描画状態の一部として使用される実行可能オブジェクトを持つプログラムオブジェクトのハンドルを指定します。
+                    </para>
                 </listitem>
             </varlistentry>
         </variablelist>
     </refsect1>
     <refsect1 xml:id="description"><title>Description</title>
-        <para><function>glUseProgram</function> installs the program
+        <para lang="en"><function>glUseProgram</function> installs the program
         object specified by <parameter>program</parameter> as part of
         current rendering state. One or more executables are created in
         a program object by successfully attaching shader objects to it
@@ -53,8 +57,14 @@
         and successfully linking the program object with
         <citerefentry><refentrytitle>glLinkProgram</refentrytitle></citerefentry>.
         </para>
+        <para lang="ja"><function>glUseProgram</function> は、カレントの描画状態の一部として <parameter>program</parameter> で指定されたプログラムオブジェクトをインストールします。
+        <citerefentry><refentrytitle>glAttachShader</refentrytitle></citerefentry> でシェーダーオブジェクトを正常にアタッチし、
+        <citerefentry><refentrytitle>glCompileShader</refentrytitle></citerefentry> でシェーダーオブジェクトを正常にコンパイルし、
+        <citerefentry><refentrytitle>glLinkProgram</refentrytitle></citerefentry> でプログラムオブジェクトを正常にリンクすることにより、
+        プログラムオブジェクトに1つ以上の実行可能なプログラムが作成されます。
+        </para>
 
-        <para>A program object will contain an executable that will run
+        <para lang="en">A program object will contain an executable that will run
         on the vertex processor if it contains one or more shader
         objects of type <constant>GL_VERTEX_SHADER</constant> that have
         been successfully compiled and linked. A program object will contain an
@@ -65,8 +75,11 @@
         fragment processor if it contains one or more shader objects of type
         <constant>GL_FRAGMENT_SHADER</constant> that have been
         successfully compiled and linked.</para>
+        <para lang="ja">プログラムオブジェクトには、正常にコンパイル及びリンクされた <constant>GL_VERTEX_SHADER</constant> タイプのシェーダーオブジェクトが一つ以上含まれている場合、バーテックスプロセッサーで実行される実行可能オブジェクトが含まれます。
+        プログラムオブジェクトには、正常にコンパイルおよびリンクされた <constant>GL_GEOMETRY_SHADER</constant> タイプの1つ以上のシェーダーオブジェクトが含まれている場合、ジオメトリプロセッサーで実行される実行可能オブジェクトが含まれます。
+        同様に、プログラムオブジェクトには、正常にコンパイルおよびリンクされた <constant>GL_FRAGMENT_SHADER</constant> タイプの1つ以上のシェーダーオブジェクトが含まれている場合、フラグメントプロセッサーで実行される実行可能オブジェクトが含まれます。</para>
 
-        <para>While a program object is in use, applications are free to
+        <para lang="en">While a program object is in use, applications are free to
         modify attached shader objects, compile attached shader objects,
         attach additional shader objects, and detach or delete shader
         objects. None of these operations will affect the executables
@@ -82,15 +95,26 @@
         subsequent call to <function>glUseProgram</function> removes it
         from use. After it is removed from use, it cannot be made part
         of current state until it has been successfully relinked.</para>
+        <para lang="ja">プログラムオブジェクトの使用中、アプリケーションは、接続されたシェーダーオブジェクトの変更、接続されたシェーダーオブジェクトのコンパイル、追加のシェーダーオブジェクトの接続、シェーダーオブジェクトのデタッチまたは削除を自由に行えます。
+        これらの操作は、カレントの状態の一部である実行可能オブジェクトには影響しません。
+        ただし、現在使用中のプログラムオブジェクトを再リンクしてリンク操作が成功した場合、現在のレンダリング状態の一部としてプログラムオブジェクトがインストールされます（<citerefentry><refentrytitle>glLinkProgram</refentrytitle></citerefentry> 参照）。
+        現在使用中のプログラムオブジェクトが正常に再リンクされない場合、そのリンクステータスは <constant>GL_FALSE</constant> に設定されますが、実行可能オブジェクトおよび関連する状態は、<function>glUseProgram</function> の後続の呼び出しによって使用状態から削除されるまで、カレントの状態の一部のままです。
+        使用状態から削除された後、正常に再リンクされるまで、カレントの状態の一部にすることはできません。
+        </para>
 
-        <para>If <parameter>program</parameter> is zero, then the current rendering
+        <para lang="en">If <parameter>program</parameter> is zero, then the current rendering
         state refers to an <emphasis>invalid</emphasis> program object and the
         results of shader execution are undefined. However, this is not an error.</para>
+        <para lang="ja"><parameter>program</parameter> が 0 の場合、カレントの描画状態は無効なプログラムオブジェクトを参照しており、シェーダーの実行結果は未定義です。
+        ただし、これはエラーではありません。
+        </para>
 
-        <para>If <parameter>program</parameter> does not
+        <paralang="en">If <parameter>program</parameter> does not
         contain shader objects of type <constant>GL_FRAGMENT_SHADER</constant>, an
         executable will be installed on the vertex, and possibly geometry processors,
         but the results of fragment shader execution will be undefined.</para>
+        <paralang="ja"><parameter>program</parameter> に <constant>GL_FRAGMENT_SHADER</constant> タイプのシェーダーオブジェクトが含まれていない場合、実行可能オブジェクトはバーテックスプロセッサー、場合によってはジオメトリプロセッサーにインストールされますが、フラグメントシェーダーの実行結果は未定義になります。</para>
+
     </refsect1>
     <refsect1 xml:id="notes"><title>Notes</title>
         <para>Like buffer and texture objects, the name space for

@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glLinkProgram</refname>
-        <refpurpose>Links a program object</refpurpose>
+        <refpurpose lang="en">Links a program object</refpurpose>
+        <refpurpose lang="ja">プログラムオブジェクトをリンクする/refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
     <funcsynopsis>
@@ -34,14 +35,15 @@
         <varlistentry>
         <term><parameter>program</parameter></term>
         <listitem>
-            <para>Specifies the handle of the program object to be linked.</para>
+            <para lang="en">Specifies the handle of the program object to be linked.</para>
+            <para lang="ja">リンクするプログラムオブジェクトのハンドルを指定します。</para>
 
         </listitem>
         </varlistentry>
     </variablelist>
     </refsect1>
     <refsect1 xml:id="description"><title>Description</title>
-    <para><function>glLinkProgram</function> links the program
+    <para lang="en"><function>glLinkProgram</function> links the program
     object specified by <parameter>program</parameter>. If any
     shader objects of type <constant>GL_VERTEX_SHADER</constant> are
     attached to <parameter>program</parameter>, they will be used to
@@ -54,8 +56,12 @@
     <parameter>program</parameter>, they will be used to create an
     executable that will run on the programmable fragment
     processor.</para>
+    <para lang="ja"><function>glLinkProgram</function> は、<parameter>program</parameter> で指定されたプログラムオブジェクトをリンクします。
+    <constant>GL_VERTEX_SHADER</constant> のシェーダーオブジェクトが <parameter>program</parameter> にアタッチされている場合、それらを使用してプログラム可能なバーテックスプロセッサーで実行される実行可能オブジェクトを作成します。
+    <constant>GL_GEOMETRY_SHADER</constant> のシェーダーオブジェクトが <parameter>program</parameter> にアタッチされている場合、それらを使用して、プログラム可能なジオメトリプロセッサーで実行される実行可能オブジェクトを作成します。
+    <constant>GL_FRAGMENT_SHADER</constant> のシェーダーオブジェクトが <parameter>program</parameter> にアタッチされている場合、それらを使用して、プログラム可能なフラグメントプロセッサーで実行される実行可能オブジェクトを作成します。</para>
 
-    <para>The status of the link operation will be stored as part of
+    <para lang="en">The status of the link operation will be stored as part of
     the program object's state. This value will be set to
     <constant>GL_TRUE</constant> if the program object was linked
     without errors and is ready for use, and
@@ -64,8 +70,11 @@
     <citerefentry><refentrytitle>glGetProgram</refentrytitle></citerefentry>
     with arguments <parameter>program</parameter> and
     <constant>GL_LINK_STATUS</constant>.</para>
+    <para lang="ja">リンクのステータスは、プログラムオブジェクトの状態の一部として保持されます。
+    この値は、プログラムオブジェクトがエラーなしでリンクされ使用可能な場合は <constant>GL_TRUE</constant> 、それ以外の場合は <constant>GL_FALSE</constant> になります。
+    <citerefentry><refentrytitle>glGetProgram</refentrytitle></citerefentry> を引数 <parameter>program</parameter> に <constant>GL_LINK_STATUS</constant> を指定して呼び出すことで、クエリーを実行できます。</para>
 
-    <para>As a result of a successful link operation, all active
+    <para lang="en">As a result of a successful link operation, all active
     user-defined uniform variables belonging to
     <parameter>program</parameter> will be initialized to 0, and
     each of the program object's active uniform variables will be
@@ -74,11 +83,17 @@
     Also, any active user-defined attribute variables that have not
     been bound to a generic vertex attribute index will be bound to
     one at this time.</para>
+    <para lang="ja">リンクが成功した結果、 <parameter>program</parameter> に属する全てのアクティブなユーザー定義のユニフォーム変数は 0 に初期化されます。
+    そして、プログラムオブジェクトの各アクティブなユニフォーム変数には、<citerefentry><refentrytitle>glGetUniformLocation</refentrytitle></citerefentry> を呼び出して参照できる場所が割り当てられます。
+     また、汎用頂点属性インデックスにバインドされていないアクティブなユーザー定義の属性変数は、この時一つがバインドされます。</para>
 
-    <para>Linking of a program object can fail for a number of
+    <para lang="en">Linking of a program object can fail for a number of
     reasons as specified in the <emphasis>OpenGL Shading Language
     Specification</emphasis>. The following lists some of the
     conditions that will cause a link error.</para>
+    <para lang="ja">プログラムオブジェクトのリンクは、 <emphasis>OpenGL Shading Language
+    Specification</emphasis> で指定されているいくつかの理由で失敗する可能性があります。
+    以下に、リンクエラーの原因となる条件の一部を示します。</para>
 
     <itemizedlist>
         <listitem>

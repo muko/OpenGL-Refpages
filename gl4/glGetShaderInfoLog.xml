@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glGetShaderInfoLog</refname>
-        <refpurpose>Returns the information log for a shader object</refpurpose>
+        <refpurpose lang="en">Returns the information log for a shader object</refpurpose>
+        <refpurpose lang="ja">シェーダーオブジェクトの情報ログを返します</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -37,41 +38,48 @@
             <varlistentry>
                 <term><parameter>shader</parameter></term>
                 <listitem>
-                    <para>Specifies the shader object whose information
+                    <para lang="en">Specifies the shader object whose information
                     log is to be queried.</para>
+                    <para lang="ja">情報ログを照会するシェーダーオブジェクトを指定します</para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>maxLength</parameter></term>
                 <listitem>
-                    <para>Specifies the size of the character buffer for
+                    <para lang="en">Specifies the size of the character buffer for
                     storing the returned information log.</para>
+                    <para lang="ja">返される情報ログを保存するための文字バッファのサイズを指定します。</para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>length</parameter></term>
                 <listitem>
-                    <para>Returns the length of the string returned in
+                    <para lang="en">Returns the length of the string returned in
                     <parameter>infoLog</parameter> (excluding the null
                     terminator).</para>
+                    <para lang="ja"><parameter>infoLog</parameter> に返される文字列の長さを返します（nullターミネーターを除く）。</para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>infoLog</parameter></term>
                 <listitem>
-                    <para>Specifies an array of characters that is used
+                    <para lang="en">Specifies an array of characters that is used
                     to return the information log.</para>
+                    <para lang="ja">情報ログを返すために使用される文字の配列を指定します。</para>
                 </listitem>
             </varlistentry>
         </variablelist>
     </refsect1>
     <refsect1 xml:id="description"><title>Description</title>
-        <para><function>glGetShaderInfoLog</function> returns the
+        <para lang="en"><function>glGetShaderInfoLog</function> returns the
         information log for the specified shader object. The information
         log for a shader object is modified when the shader is compiled.
         The string that is returned will be null terminated.</para>
+        <para lang="ja"><function>glGetShaderInfoLog</function> は、指定されたシェーダーオブジェクトの情報ログを返します。
+        シェーダーオブジェクトの情報ログは、シェーダーのコンパイル時に更新されます。
+        返される文字列はnull終端になっています。</para>
 
-        <para><function>glGetShaderInfoLog</function> returns in
+        <para lang="en"><function>glGetShaderInfoLog</function> returns in
         <parameter>infoLog</parameter> as much of the information log as
         it can, up to a maximum of <parameter>maxLength</parameter>
         characters. The number of characters actually returned,
@@ -83,21 +91,30 @@
         log can be obtained by calling
         <citerefentry><refentrytitle>glGetShader</refentrytitle></citerefentry>
         with the value <constant>GL_INFO_LOG_LENGTH</constant>.</para>
+        <para lang="ja"><function>glGetShaderInfoLog</function> は、最大で <parameter>maxLength</parameter> 文字まで、可能な限り多くの情報ログを <parameter>infoLog</parameter> に返します。
+        null終端文字を除く実際に返される文字数は、<parameter>length</parameter> で指定されます。
+        返される文字列の長さが不要な場合は、引数 <parameter>length</parameter> に <constant>NULL</constant> を渡すことができます。
+        返された情報ログを保存するために必要なバッファーサイズは、<citerefentry><refentrytitle>glGetShader</refentrytitle></citerefentry> を <constant>GL_INFO_LOG_LENGTH</constant> で呼び出すことで取得できます。</para>
 
-        <para>The information log for a shader object is a string that
+        <para lang="en">The information log for a shader object is a string that
         may contain diagnostic messages, warning messages, and other
         information about the last compile operation. When a shader
         object is created, its information log will be a string of
         length 0.</para>
+        <para lang="ja">シェーダーオブジェクトの情報ログは、診断メッセージ、警告メッセージ、および最後のコンパイル操作に関するその他の情報を含む文字列です。
+        シェーダーオブジェクトが作成されると、その情報ログは長さ0の文字列になります。</para>
     </refsect1>
     <refsect1 xml:id="notes"><title>Notes</title>
-        <para>The information log for a shader object is the OpenGL
+        <para lang="en">The information log for a shader object is the OpenGL
         implementer's primary mechanism for conveying information about
         the compilation process. Therefore, the information log can be
         helpful to application developers during the development
         process, even when compilation is successful. Application
         developers should not expect different OpenGL implementations to
         produce identical information logs.</para>
+        <para lang="ja">シェーダーオブジェクトの情報ログは、コンパイルプロセスに関する情報を伝達するためのOpenGL実装者の主要なメカニズムです。
+        従って、情報ログはコンパイルが成功した場合でも開発プロセス中にアプリケーション開発者に役立ちます。
+        アプリケーション開発者は、異なるOpenGL実装が同一の情報ログを生成することを期待すべきではありません。</para>
     </refsect1>
     <refsect1 xml:id="errors"><title>Errors</title>
         <para><constant>GL_INVALID_VALUE</constant> is generated if

@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glCompileShader</refname>
-        <refpurpose>Compiles a shader object</refpurpose>
+        <refpurpose lang="en">Compiles a shader object</refpurpose>
+        <refpurpose lang="ja">シェーダーオブジェクトをコンパイルします</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
     <funcsynopsis>
@@ -34,18 +35,20 @@
         <varlistentry>
         <term><parameter>shader</parameter></term>
         <listitem>
-            <para>Specifies the shader object to be
+            <para lang="en">Specifies the shader object to be
             compiled.</para>
+            <para lang="ja">コンパイルするシェーダーオブジェクトを指定します。</para>
         </listitem>
         </varlistentry>
     </variablelist>
     </refsect1>
     <refsect1 xml:id="description"><title>Description</title>
-    <para><function>glCompileShader</function> compiles the source
+    <para lang="en"><function>glCompileShader</function> compiles the source
     code strings that have been stored in the shader object
     specified by <parameter>shader</parameter>.</para>
+    <para lang="ja"><function>glCompileShader</function> は、 <parameter>shader</parameter> に指定されたシェーダーオブジェクトに保存されているソースコード文字列をコンパイルします。</para>
 
-    <para>The compilation status will be stored as part of the
+    <para lang="en">The compilation status will be stored as part of the
     shader object's state. This value will be set to
     <constant>GL_TRUE</constant> if the shader was compiled without
     errors and is ready for use, and <constant>GL_FALSE</constant>
@@ -53,13 +56,18 @@
     <citerefentry><refentrytitle>glGetShader</refentrytitle></citerefentry>
     with arguments <parameter>shader</parameter> and
     <constant>GL_COMPILE_STATUS</constant>.</para>
+    <para lang="ja">コンパイルステータスは、シェーダーオブジェクトの状態の一部として保存されます。
+    この値は、シェーダーにエラーが無くコンパイルされ使用準備ができている場合は <constant>GL_TRUE</constant>、それ以外は <constant>GL_FALSE</constant> に設定されます。
+    これは、<citerefentry><refentrytitle>glGetShader</refentrytitle></citerefentry> を引数 <parameter>shader</parameter> と <constant>GL_COMPILE_STATUS</constant> を使用して呼び出すことで照会できます。</para>
 
-    <para>Compilation of a shader can fail for a number of reasons
+    <para lang="en">Compilation of a shader can fail for a number of reasons
     as specified by the OpenGL Shading Language Specification.
     Whether or not the compilation was successful, information about
     the compilation can be obtained from the shader object's
     information log by calling
     <citerefentry><refentrytitle>glGetShaderInfoLog</refentrytitle></citerefentry>.</para>
+    <para lang="ja"> シェーダーのコンパイルは、OpenGL Shading Language Specificationで指定されているいくつかの理由で失敗する可能性があります。
+    コンパイル成功の可否に依らず、<citerefentry><refentrytitle>glGetShaderInfoLog</refentrytitle></citerefentry> を呼び出すことでシェーダーオブジェクトの情報ログからコンパイルに関する情報を取得できます。</para>
     </refsect1>
     <refsect1 xml:id="errors"><title>Errors</title>
     <para><constant>GL_INVALID_VALUE</constant> is generated if

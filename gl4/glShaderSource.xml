@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glShaderSource</refname>
-        <refpurpose>Replaces the source code in a shader object</refpurpose>
+        <refpurpose lang="en">Replaces the source code in a shader object</refpurpose>
+        <refpurpose lang="ja">シェーダーオブジェクトのソースコードを置き換えます</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -37,37 +38,41 @@
             <varlistentry>
                 <term><parameter>shader</parameter></term>
                 <listitem>
-                    <para>Specifies the handle of the shader object
+                    <para lang="en">Specifies the handle of the shader object
                     whose source code is to be replaced.</para>
+                    <para lang="ja">ソースコードを置換するシェーダーオブジェクトのハンドルを指定します。</para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>count</parameter></term>
                 <listitem>
-                    <para>Specifies the number of elements in the
+                    <para lang="en">Specifies the number of elements in the
                     <parameter>string</parameter> and
                     <parameter>length</parameter>
                     arrays.</para>
+                    <para lang="ja"><parameter>string</parameter> と <parameter>length</parameter> の配列の要素の数を指定します。</para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>string</parameter></term>
                 <listitem>
-                    <para>Specifies an array of pointers to strings
+                    <para lang="en">Specifies an array of pointers to strings
                     containing the source code to be loaded into the
                     shader.</para>
+                    <para lang="ja">シェーダーにロードされるソースコードを含む文字列へのポインターの配列を指定します。</para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>length</parameter></term>
                 <listitem>
-                    <para>Specifies an array of string lengths.</para>
+                    <para lang="en">Specifies an array of string lengths.</para>
+                    <para lang="ja">文字列の長さの配列を指定します。</para>
                 </listitem>
             </varlistentry>
         </variablelist>
     </refsect1>
     <refsect1 xml:id="description"><title>Description</title>
-        <para><function>glShaderSource</function> sets the source code
+        <para lang="en"><function>glShaderSource</function> sets the source code
         in <parameter>shader</parameter> to the source code in the array
         of strings specified by <parameter>string</parameter>. Any
         source code previously stored in the shader object is completely
@@ -84,12 +89,20 @@
         that the string is null terminated. The source code strings are
         not scanned or parsed at this time; they are simply copied into
         the specified shader object.</para>
+        <para lang="ja"><function>glShaderSource</function> は、 <parameter>string</parameter> で指定された文字列の配列のソースコードを <parameter>shader</parameter> のソースコードとして設定します。
+        シェーダーオブジェクトに以前格納されていたソースコードは全て置換されます。
+        配列内の文字列の数は、 <parameter>count</parameter> で指定されます。
+        <parameter>length</parameter> が <constant>NULL</constant> の場合、各文字列の終端は <constant>NULL</constant> であると見見做されます。 
+        <parameter>length</parameter> が <constant>NULL</constant> 以外の値の場合、<parameter>string</parameter> の配列に対応する各要素の文字列の長さを指定します。
+        <parameter>length</parameter> 配列の各要素には、対応する文字列の長さ（null文字は文字列の長さの一部としてカウントされない）を格納するか、0未満の値にすることで文字列がnull終端文字列であることを示します。
+        この時点では、ソースコード文字列に対してスキャンやパースは行われません。 指定されたシェーダーオブジェクトに単純にコピーされます。</para>
     </refsect1>
     <refsect1 xml:id="notes"><title>Notes</title>
-        <para>OpenGL copies the shader source code strings when
+        <para lang="en">OpenGL copies the shader source code strings when
         <function>glShaderSource</function> is called, so an application
         may free its copy of the source code strings immediately after
         the function returns.</para>
+        <para lang="ja">OpenGLは <function>glShaderSource</function> が呼び出されたときにシェーダーソースコード文字列をコピーするため、アプリケーションは関数が戻った直後にソースコード文字列のコピーを解放できます。</para>
     </refsect1>
     <refsect1 xml:id="errors"><title>Errors</title>
         <para><constant>GL_INVALID_VALUE</constant> is generated if
