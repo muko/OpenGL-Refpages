@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glPolygonMode</refname>
-        <refpurpose>select a polygon rasterization mode</refpurpose>
+        <refpurpose lang="en">select a polygon rasterization mode</refpurpose>
+        <refpurpose lang="ja">ポリゴンのラスタライズモードを選択</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -35,16 +36,20 @@
         <varlistentry>
             <term><parameter>face</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies the polygons that <parameter>mode</parameter> applies to.
                     Must be <constant>GL_FRONT_AND_BACK</constant> for front- and back-facing polygons.
+                </para>
+                <para lang="en">
+                    <parameter>mode</parameter> に適用されるポリゴンを指定します。
+                    前面と背面がポリゴンの場合、<constant>GL_FRONT_AND_BACK</constant> でなければなりません。
                 </para>
             </listitem>
         </varlistentry>
         <varlistentry>
             <term><parameter>mode</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies how polygons will be rasterized.
                     Accepted values are
                     <constant>GL_POINT</constant>,
@@ -52,12 +57,17 @@
                     <constant>GL_FILL</constant>.
                     The initial value is <constant>GL_FILL</constant> for both front- and back-facing polygons.
                 </para>
+                <para lang="ja">
+                    ポリゴンのラスタライズ方法を指定します。
+                    <constant>GL_POINT</constant>、<constant>GL_LINE</constant>、<constant>GL_FILL</constant> を指定できます。
+                    初期値は、前面と背面の両方がポリゴンとなっている <constant>GL_FILL</constant> です。
+                </para>
             </listitem>
         </varlistentry>
         </variablelist>
     </refsect1>
     <refsect1 xml:id="description"><title>Description</title>
-        <para>
+        <para lang="en">
             <function>glPolygonMode</function> controls the interpretation of polygons for rasterization.
             <parameter>face</parameter> describes which polygons <parameter>mode</parameter> applies to:
             both front and back-facing polygons (<constant>GL_FRONT_AND_BACK</constant>).
@@ -66,14 +76,24 @@
             a polygon's vertices are lit and
             the polygon is clipped and possibly culled before these modes are applied.
         </para>
-        <para>
+        <para lang="ja">
+            <function>glPolygonMode</function> は、ラスタライズするためのポリゴンの解釈を制御します。 
+            <parameter>face</parameter> は、どのポリゴンモード (<parameter>mode</parameter>) が適用されるかを説明します。
+            例えば、前面と背面の両方のポリゴンは<constant>GL_FRONT_AND_BACK</constant>になります。
+            ポリゴンモードは、ポリゴンの最後のラスタライズのみに影響します。
+            特に、これらのモードが適用される前に、ポリゴンの頂点が照らされ、ポリゴンがクリップされ、場合によってはカリングされます。
+        </para>
+        <para lang="en">
             Three modes are defined and can be specified in <parameter>mode</parameter>:
+        </para>
+        <para lang="ja">
+            3つのモードが定義されており、<parameter>mode</parameter> で指定できます。
         </para>
         <variablelist>
             <varlistentry>
                 <term><constant>GL_POINT</constant></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         Polygon vertices that are marked as the start of a boundary edge
                         are drawn as points.
                         Point attributes such as
@@ -82,12 +102,17 @@
                         the rasterization of the points.
                         Polygon rasterization attributes other than <constant>GL_POLYGON_MODE</constant> have no effect.
                     </para>
+                    <para lang="ja">
+                        境界エッジの始点としてマークされているポリゴンの頂点は、点として描画されます。 
+                        <constant>GL_POINT_SIZE</constant> や <constant>GL_POINT_SMOOTH</constant> などの点の属性は、点のラスタライズを制御します。 
+                        <constant>GL_POLYGON_MODE</constant> 以外のポリゴンのラスタライズの属性には効果がありません。
+                    </para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><constant>GL_LINE</constant></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         Boundary edges of the polygon are drawn as line segments.
                         Line attributes such as
                         <constant>GL_LINE_WIDTH</constant> and
@@ -95,33 +120,52 @@
                         the rasterization of the lines.
                         Polygon rasterization attributes other than <constant>GL_POLYGON_MODE</constant> have no effect.
                     </para>
+                    <para lang="ja">
+                        ポリゴンの境界となるエッジはラインセグメントとして描画されます。 
+                        <constant>GL_LINE_WIDTH</constant> や <constant>GL_LINE_SMOOTH</constant> などの線の属性は、線のラスタライズを制御します。 
+                        <constant>GL_POLYGON_MODE</constant> 以外のポリゴンのラスタライズの属性は無効です。
+                    </para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><constant>GL_FILL</constant></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         The interior of the polygon is filled.
                         Polygon attributes such as <constant>GL_POLYGON_SMOOTH</constant> control the rasterization of the polygon.
+                    </para>
+                    <para lang="ja">
+                        ポリゴンの内部が塗りつぶされます。
+                        <constant>GL_POLYGON_SMOOTH</constant> などのポリゴン属性は、ポリゴンのラスタライズを制御します。
                     </para>
                 </listitem>
             </varlistentry>
         </variablelist>
     </refsect1>
     <refsect1 xml:id="examples"><title>Examples</title>
-        <para>
+        <para lang="en">
             To draw a surface with outlined polygons,
             call
             <programlisting>
 glPolygonMode(<constant>GL_FRONT_AND_BACK</constant>, <constant>GL_LINE</constant>);
             </programlisting>
         </para>
+        <para lang="ja">
+            輪郭付きのポリゴンを表面に描く場合
+            <programlisting>
+glPolygonMode(<constant>GL_FRONT_AND_BACK</constant>, <constant>GL_LINE</constant>);
+            </programlisting>
+        </para>
     </refsect1>
     <refsect1 xml:id="notes"><title>Notes</title>
-        <para>
+        <para lang="en">
             Vertices are marked as boundary or nonboundary with an edge flag.
             Edge flags are generated internally by the GL when it decomposes
             triangle stips and fans.
+        </para>
+        <para lang="ja">
+            頂点が境界または非境界であるかはエッジフラグによってマークされます。
+             エッジフラグは、GLが三角形のストリップや扇型に分解するときに、GLによって内部的に生成されます。
         </para>
     </refsect1>
     <refsect1 xml:id="errors"><title>Errors</title>

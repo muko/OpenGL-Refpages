@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glGetError</refname>
-        <refpurpose>return error information</refpurpose>
+        <refpurpose lang="en">return error information</refpurpose>
+        <refpurpose lang="ja">エラー情報を返す</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -30,7 +31,7 @@
         </funcsynopsis>
     </refsynopsisdiv>
     <refsect1 xml:id="description"><title>Description</title>
-        <para>
+        <para lang="en">
             <function>glGetError</function> returns the value of the error flag.
             Each detectable error is assigned a numeric code and symbolic name.
             When an error occurs,
@@ -42,7 +43,14 @@
             there has been no detectable error since the last call to <function>glGetError</function>,
             or since the GL was initialized.
         </para>
-        <para>
+        <para lang="ja">
+            <function>glGetError</function> はエラーフラグの値を返します。
+            検出可能な各エラーには、数値コードとシンボル名が割り当てられています。
+            エラーが発生すると、エラーフラグに適切なエラーコード値が設定されます。 
+            <function>glGetError</function> が呼び出され、エラーコードが返され、フラグが <constant>GL_NO_ERROR</constant> にリセットされるまで、他のエラーは記録されません。
+            <function>glGetError</function> の呼び出しで <constant>GL_NO_ERROR</constant> が返る場合、<function>glGetError</function> の最後の呼び出し以降、またはGLの初期化以降、検出可能なエラーはありません。
+        </para>
+        <para lang="en">
             To allow for distributed implementations,
             there may be several error flags.
             If any single error flag has recorded an error,
@@ -55,92 +63,134 @@
             until it returns <constant>GL_NO_ERROR</constant>,
             if all error flags are to be reset.
         </para>
-        <para>
+        <para lang="ja">
+            分散実装を可能にするために、いくつかのエラーフラグが存在する場合があります。
+            単一のエラーフラグがエラーを記録した場合、そのフラグの値が返され、そのフラグは <function>glGetError</function> が呼び出されたときに <constant>GL_NO_ERROR</constant> にリセットされます。
+            複数のフラグがエラーを記録した場合、<function>glGetError</function> は任意のエラーフラグ値を返し、そのフラグをクリアします。
+            従って、すべてのエラーフラグをリセットする場合は、 <constant>GL_NO_ERROR</constant> が返されるまで、常に <function>glGetError</function> をループで呼び出す必要があります。
+        </para>
+        <para lang="en">
             Initially, all error flags are set to <constant>GL_NO_ERROR</constant>.
         </para>
-        <para>
+        <para lang="ja">
+            最初は、すべてのエラーフラグが <constant>GL_NO_ERROR</constant>に設定されています。
+        </para>
+        <para lang="en">
             The following errors are currently defined:
+        </para>
+        <para lang="ja">
+            現在、以下のエラーが定義されています。
         </para>
         <variablelist>
             <varlistentry>
                 <term><constant>GL_NO_ERROR</constant></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         No error has been recorded.
                         The value of this symbolic constant is guaranteed to be 0.
+                    </para>
+                    <para lang="ja">
+                        エラーは記録されていません。
+                        このシンボル定数の値は 0 であることが保証されています。
                     </para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><constant>GL_INVALID_ENUM</constant></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         An unacceptable value is specified for an enumerated argument.
                         The offending command is ignored
                         and has no other side effect than to set the error flag.
+                    </para>
+                    <para lang="ja">
+                         列挙された引数に許容されない値が指定されています。
+                         問題のコマンドは無視され、エラーフラグを設定する以外の副作用はありません。
                     </para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><constant>GL_INVALID_VALUE</constant></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         A numeric argument is out of range.
                         The offending command is ignored
                         and has no other side effect than to set the error flag.
+                    </para>
+                    <para lang="ja">
+                        引数の数値が範囲外です。
+                        問題のコマンドは無視され、エラーフラグを設定する以外の副作用はありません。
                     </para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><constant>GL_INVALID_OPERATION</constant></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         The specified operation is not allowed in the current state.
                         The offending command is ignored
                         and has no other side effect than to set the error flag.
+                    </para>
+                    <para lang="ja">
+                        指定された操作は現在の状態では許可されていません。
+                        問題のコマンドは無視され、エラーフラグを設定する以外の副作用はありません。
                     </para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><constant>GL_INVALID_FRAMEBUFFER_OPERATION</constant></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         The framebuffer object is not complete. The offending command
                         is ignored and has no other side effect than to set the error flag.
+                    </para>
+                    <para lang="ja">
+                        フレームバッファオブジェクトが不完全です。 
+                        問題のコマンドは無視され、エラーフラグを設定する以外の副作用はありません。
                     </para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><constant>GL_OUT_OF_MEMORY</constant></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         There is not enough memory left to execute the command.
                         The state of the GL is undefined,
                         except for the state of the error flags,
                         after this error is recorded.
+                    </para>
+                    <para lang="ja">
+                        コマンドを実行する為の十分なメモリがありません。
+                        このエラーが記録された後のGLの状態は、エラーフラグの状態を除いて未定義です。
                     </para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><constant>GL_STACK_UNDERFLOW</constant></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         An attempt has been made to perform an operation that would
                         cause an internal stack to underflow.
+                    </para>
+                    <para lang="ja">
+                        内部のスタックがアンダーフローする操作を実行しようとしました。
                     </para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><constant>GL_STACK_OVERFLOW</constant></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         An attempt has been made to perform an operation that would
                         cause an internal stack to overflow.
+                    </para>
+                    <para lang="ja">
+                        内部のスタックがオーバーフローする操作を実行しようとしました。
                     </para>
                 </listitem>
             </varlistentry>
         </variablelist>
-        <para>
+        <para lang="en">
             When an error flag is set,
             results of a GL operation are undefined only if <constant>GL_OUT_OF_MEMORY</constant>
             has occurred.
@@ -149,6 +199,12 @@
             or frame buffer contents.
             If the generating command returns a value, it returns 0.
             If <function>glGetError</function> itself generates an error, it returns 0.
+        </para>
+        <para lang="ja">
+            エラーフラグが設定されている場合、 <constant>GL_OUT_OF_MEMORY</constant> が発生した場合にのみ、GL操作の結果は未定義になります。
+            その他の場合はすべて、エラーを生成するコマンドは無視され、GLの状態やフレームバッファーの内容には影響を与えません。
+            生成コマンドが値を返す場合、 0 を返します。
+            <function>glGetError</function>  自体がエラーを生成する場合、 0 を返します。
         </para>
     </refsect1>
     <refsect1 xml:id="versions"><title>Version Support</title>

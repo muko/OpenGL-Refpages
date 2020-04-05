@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glClearDepth</refname>
-        <refpurpose>specify the clear value for the depth buffer</refpurpose>
+        <refpurpose lang="en">specify the clear value for the depth buffer</refpurpose>
+        <refpurpose lang="ja">デプスバッファーのクリア値を指定します</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -38,16 +39,20 @@
         <varlistentry>
             <term><parameter>depth</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies the depth value used when the depth buffer is cleared. The
                     initial value is 1.
+                </para>
+                <para lang="ja">
+                    デプスバッファーがクリアされるときに使用される深度値を指定します。 
+                    初期値は1です。
                 </para>
             </listitem>
         </varlistentry>
         </variablelist>
     </refsect1>
     <refsect1 xml:id="description"><title>Description</title>
-        <para>
+        <para lang="en">
             <function>glClearDepth</function> specifies the depth value used by <citerefentry><refentrytitle>glClear</refentrytitle></citerefentry> to clear the depth buffer.
             Values specified by <function>glClearDepth</function> are clamped to the range
             <inlineequation><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" overflow="scroll">
@@ -58,9 +63,21 @@
                 </mml:mfenced>
             </mml:math></inlineequation>.
         </para>
+        <para lang="ja">
+            <function>glClearDepth</function> は、デプスバッファーをクリアするために <citerefentry><refentrytitle>glClear</refentrytitle></citerefentry> が使用する深度値を指定します。 
+            <function>glClearDepth</function> で指定された値は範囲
+            <inlineequation><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+                <!-- eqn: [0,1]: -->
+                <mml:mfenced open="[" close="]">
+                    <mml:mn>0</mml:mn>
+                    <mml:mn>1</mml:mn>
+                </mml:mfenced>
+            </mml:math></inlineequation>.
+            にクランプされます。
+        </para>
     </refsect1>
     <refsect1 xml:id="notes"><title>Notes</title>
-        <para>
+        <para lang="en">
             The type of the <parameter>depth</parameter> parameter was
             changed from GLclampf to GLfloat for
             <function>glClearDepthf</function> and from GLclampd to
@@ -69,6 +86,10 @@
             the
             <citerefentry><refentrytitle>removedTypes</refentrytitle></citerefentry>
             page.
+        </para>
+        <para lang="ja">
+            パラメータ <parameter>depth</parameter> の型は、<function>glClearDepthf</function> で GLclampf から GLfloat に変更され、 <function>glClearDepth</function> で GLclampd から GLdouble に変更されました。
+            この変更はユーザーコードに対して透過的であり、 <citerefentry><refentrytitle>removedTypes</refentrytitle></citerefentry> ページで詳細に説明されています。
         </para>
     </refsect1>
     <refsect1 xml:id="associatedgets"><title>Associated Gets</title>

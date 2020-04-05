@@ -52,7 +52,8 @@
         <refname>glUniformMatrix4x2fv</refname>
         <refname>glUniformMatrix3x4fv</refname>
         <refname>glUniformMatrix4x3fv</refname>
-        <refpurpose>Specify the value of a uniform variable for the current program object</refpurpose>
+        <refpurpose lang="en">Specify the value of a uniform variable for the current program object</refpurpose>
+        <refpurpose lang="ja">現在のプログラムオブジェクトのユニフォーム変数の値を指定する</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
     <funcsynopsis>
@@ -278,34 +279,46 @@
         <varlistentry>
         <term><parameter>location</parameter></term>
         <listitem>
-            <para>Specifies the location of the uniform variable
+            <para lang="en">Specifies the location of the uniform variable
             to be modified.</para>
+            <para lang="ja">変更したいユニフォーム変数の位置を指定します。</para>
         </listitem>
         </varlistentry>
         <varlistentry>
         <term><parameter>count</parameter></term>
         <listitem>
-            <para>
+            <para lang="en">
                 For the vector (<function>glUniform*v</function>) commands,
                 specifies the number of elements that are to be modified.
                 This should be 1 if the targeted uniform variable is not an
                 array, and 1 or more if it is an array.
             </para>
-            <para>
+            <para lang="ja">
+                ベクトル命令(<function>glProgramUniform*v</function>)に於いては、変更したい要素の数を指定します。
+		対象のユニフォーム変数が配列ではない場合は1であり、配列の場合は1以上でなければなりません。
+            </para>
+            <para lang="en">
                 For the matrix (<function>glUniformMatrix*</function>)
                 commands, specifies the number of matrices that are to be
                 modified. This should be 1 if the targeted uniform variable
                 is not an array of matrices, and 1 or more if it is an array
                 of matrices.
             </para>
+            <para lang="ja">
+                行列命令(<function>glProgramUniformMatrix*</function>)に於いては、変更する行列の数を指定します。
+		対象のユニフォーム変数が行列の配列ではない場合は1であり、行列の配列の場合は1以上でなければなりません。
+            </para>
         </listitem>
         </varlistentry>
         <varlistentry>
         <term><parameter>transpose</parameter></term>
         <listitem>
-            <para>
+            <para lang="en">
                 For the matrix commands, specifies whether to transpose the
                 matrix as the values are loaded into the uniform variable.
+            </para>
+            <para lang="ja">
+                行列命令に於いて、ユニフォーム変数へロードする際に転置するかどうかを指定します。
             </para>
         </listitem>
         </varlistentry>
@@ -317,26 +330,32 @@
             <parameter>v3</parameter>
         </term>
         <listitem>
-            <para>
+            <para lang="en">
                 For the scalar commands, specifies the new values to be used
                 for the specified uniform variable.
+            </para>
+            <para lang="ja">
+                スカラー命令に於いて、指定されたユニフォーム変数に使用される新しい値を指定します。
             </para>
         </listitem>
         </varlistentry>
         <varlistentry>
         <term><parameter>value</parameter></term>
         <listitem>
-            <para>
+            <para lang="en">
                 For the vector and matrix commands, specifies a pointer to
                 an array of <parameter>count</parameter> values that will be
                 used to update the specified uniform variable.
+            </para>
+            <para lang="ja">
+	        ベクトル命令及び行列命令に於いて、指定されたユニフォーム変数を更新するために使用される値が格納された配列のポインターを<parameter>count</parameter> に指定します。
             </para>
         </listitem>
         </varlistentry>
     </variablelist>
     </refsect1>
     <refsect1 xml:id="description"><title>Description</title>
-    <para><function>glUniform</function> modifies the value of a
+    <para lang="en"><function>glUniform</function> modifies the value of a
     uniform variable or a uniform variable array. The location of
     the uniform variable to be modified is specified by
     <parameter>location</parameter>, which should be a value
@@ -345,8 +364,13 @@
     <function>glUniform</function> operates on the program object
     that was made part of current state by calling
     <citerefentry><refentrytitle>glUseProgram</refentrytitle></citerefentry>.</para>
+    <para lang="ja"><function>glUniform</function> は、ユニフォーム変数またはユニフォーム変数配列の値を変更します。 
+    変更するユニフォーム変数の場所は <parameter>location</parameter> によって指定され、
+    <citerefentry><refentrytitle>glGetUniformLocation</refentrytitle></citerefentry> によって返される値である必要があります。.
+    <function>glUniform</function> は、<citerefentry><refentrytitle>glUseProgram</refentrytitle></citerefentry>
+    を呼び出すことにより現在の状態の一部となったプログラムオブジェクトで動作します。</para>
 
-    <para>The commands <function>glUniform{1|2|3|4}{f|i|ui}</function>
+    <para lang="en">The commands <function>glUniform{1|2|3|4}{f|i|ui}</function>
     are used to change the value of the uniform variable specified
     by <parameter>location</parameter> using the values passed as
     arguments. The number specified in the command should match the
@@ -371,15 +395,30 @@
     <code>bool</code>, <code>bvec2</code>, <code>bvec3</code>, <code>bvec4</code>, or arrays of these. The uniform
     variable will be set to <code>false</code> if the input value is 0 or 0.0f,
     and it will be set to <code>true</code> otherwise.</para>
+   <para lang="ja">コマンド <function>glUniform{1|2|3|4}{f|i|ui}</function> は、 <parameter>location</parameter> で指定されたユニフォーム変数の値を引数で渡された値に変更するために使用されます。
+    コマンドで指定された数は、指定されたユニフォーム変数のデータ型のコンポーネントの数と一致する必要があります
+    （例えば、<code>float</code>、<code>int</code>、<code>unsigned int</code>、<code>bool</code>の場合は<function>1</function>、
+    <code>vec2</code>、<code>ivec2</code>、<code>uvec2</code>、<code>bvec2</code>などの場合は<function>2</function>）。
+    サフィックス<function>f</function>は、浮動小数が渡されることを示します。
+    サフィックス<function>i</function>は、整数が渡されることを示します。
+    サフィックス<function>ui</function>は、符号なし整数が渡されることを示します。
+    どの型も指定されたユニフォーム変数のデータ型と一致させる必要があります。 
+    サフィックス<function>i</function>の関数は、<code>int</code>、<code>ivec2</code>、<code>ivec3</code>、<code>ivec4</code>、またはこれらの配列として定義されたユニフォーム変数に値を設定する為に利用できます。
+    サフィックス<function>ui</function>の関数は、<code>unsigned int</code>、<code>uvec2</code>、<code>uvec3</code>、<code>uvec4</code>、またはこれらの配列として定義されたユニフォーム変数に値を設定する為に利用できます。
+    サフィックス<function>f</function>の関数は、<code>float</code>、<code>vec2</code>、<code>vec3</code>、<code>vec4</code>、またはこれらの配列として定義されたユニフォーム変数に値を設定する為に利用できます。
+    サフィックス<function>i</function>、<function>ui</function>、<function>f</function>のいずれの関数も、<code>bool</code>、<code>bvec2</code>、<code>bvec3</code>、<code>bvec4</code>型のユニフォーム変数またはこれらの配列に値を設定できます。
+    入力値が 0 または 0.0f の場合、ユニフォーム変数は<code>false</code>に設定され、それ以外では<code>true</code>に設定されます。</para>
 
-    <para>All active uniform variables defined in a program object
+    <para lang="en">All active uniform variables defined in a program object
     are initialized to 0 when the program object is linked
     successfully. They retain the values assigned to them by a call
     to <function>glUniform </function> until the next successful
     link operation occurs on the program object, when they are once
     again initialized to 0.</para>
+    <para lang="ja">プログラムオブジェクトが正常にリンクされると、プログラムオブジェクトで定義されている全てのアクティブなユニフォーム変数は 0 に初期化されます。 
+    プログラムオブジェクトのリンク操作が次に成功するまで、ユニフォーム変数は<function>glProgramUniform</function>の呼び出しによって割り当てられた値を保持し、その後再び 0 に初期化されます。</para>
 
-    <para>The commands <function>glUniform{1|2|3|4}{f|i|ui}v</function>
+    <para lang="en">The commands <function>glUniform{1|2|3|4}{f|i|ui}v</function>
     can be used to modify a single uniform variable or a uniform
     variable array. These commands pass a count and a pointer to the
     values to be loaded into a uniform variable or a uniform
@@ -402,16 +441,28 @@
     type specified in the name of the command must match the data
     type for the specified uniform variable as described previously
     for <function>glUniform{1|2|3|4}{f|i|ui}</function>.</para>
+    <para lang="ja">コマンド <function>glUniform{1|2|3|4}{f|i|ui}v</function> を使用して、一つのユニフォーム変数またはユニフォーム変数配列を変更できます。
+    これらのコマンドは、カウントおよびユニフォーム変数またはユニフォーム変数配列にロードされる値へのポインターを渡します。 
+    一つのユニフォーム変数の値を変更する場合はカウントに 1 を使用する必要があり、カウントに 1 以上を使用して配列全体または配列の一部を変更できます。
+    ユニフォーム変数配列の任意の位置 <emphasis>m</emphasis> から始まる <emphasis>n</emphasis> 個の要素をロードすると、配列内の要素 <emphasis>m</emphasis> + <emphasis>n</emphasis> - 1 は新しい値に置き換えられます。  
+    <parameter>m</parameter> + <parameter>n</parameter> - 1 がユニフォーム変数配列のサイズより大きい場合、配列の末尾を超えるすべての配列要素の値は無視されます。
+    コマンド名で指定された数値は、<parameter>value</parameter> の各要素のコンポーネント数を示し、指定されたユニフォーム変数のデータ型のコンポーネント数と一致する必要があります
+    （例えば、float、int、bool>の場合は<function>1</function>、vec2、ivec2、bvec2の場合は<function>2</function>、など）。
+    コマンドの名前で指定されたデータ型は、<function>glUniform{1|2|3|4}{f|i|ui}</function>について前述したように、指定されたユニフォーム変数のデータ型と一致する必要があります。</para>
 
-    <para>For uniform variable arrays, each element of the array is
+    <para lang="en">For uniform variable arrays, each element of the array is
     considered to be of the type indicated in the name of the
     command (e.g., <function>glUniform3f</function> or
     <function>glUniform3fv</function> can be used to load a uniform
     variable array of type vec3). The number of elements of the
     uniform variable array to be modified is specified by
     <parameter>count</parameter></para>
+    <para lang="ja">ユニフォーム変数配列の場合、配列の各要素は、コマンドの名前で示されている型であると見做されます
+    （例えば、<function>glUniform3f</function> または <function>glUniform3fv</function> を使用して、vec3型のユニフォーム変数配列をロードできます）。
+    変更するユニフォーム変数配列の要素数は、<parameter>count</parameter> で指定します。
+    </para>
 
-    <para>The commands
+    <para lang="en">The commands
     <function>glUniformMatrix{2|3|4|2x3|3x2|2x4|4x2|3x4|4x3}fv</function>
     are used to modify a matrix or an array of matrices. The numbers in the
     command name are interpreted as the dimensionality of the matrix.
@@ -434,6 +485,19 @@
     of 1 should be used if modifying the value of a single matrix,
     and a count greater than 1 can be used to modify an array of
     matrices.</para>
+    <para lang="ja">
+    コマンド <function>glUniformMatrix{2|3|4|2x3|3x2|2x4|4x2|3x4|4x3}fv</function> は、行列または行列の配列を変更するために使用されます。
+    コマンド名の数字は、マトリックスの次元として解釈されます。
+    数値<function>2</function>は 2 &#215; 2 の行列（すなわち4つの値）を示し、
+    数値<function>3</function>は 3 &#215; 3 の行列（すなわち9つの値）を示し、
+    数値<function>4/function>は 4 &#215; 4 の行列（すなわち16の値）を示します。
+    非正方行列の次元は明示的に示します。最初の数は列の要素数を表し、2番目の数は行の要素数を表します。
+    たとえば、<function>2x4</function>は 2 &#215; 4の行列（すなわち8つの値）を示します。
+    <parameter>transpose</parameter>が<constant>GL_FALSE</constant>の場合、列優先で行列の各要素が提供されると想定されます。
+    <parameter>transpose</parameter>が<constant>GL_TRUE</constant>の場合、行優先で行列の各要が素提供されると想定されます。
+    <parameter>count</parameter>引数は、渡される行列の数を示します。
+    一つの行列の値を変更する場合はcountに1を指定する必要があり、行列の配列を変更する場合はcountに1より大きい値を指定します。
+    </para>
     </refsect1>
     <refsect1 xml:id="notes"><title>Notes</title>
     <para><function>glUniform1i</function> and
@@ -441,26 +505,45 @@
     that may be used to load uniform variables defined as sampler
     types. Loading samplers with any other function will result in a
     <constant>GL_INVALID_OPERATION</constant> error.</para>
+    <para lang="ja">
+    <function>glUniform1i</function> と <function>glUniform1iv</function> は、
+    サンプラータイプとして定義されたユニフォーム変数をロードするために使用できる関数です。
+    他の関数でサンプラーをロードすると、<constant>GL_INVALID_OPERATION</constant> エラーが発生します。
+    </para>
 
-    <para>If <parameter>count</parameter> is greater than 1 and the
+    <para lang="en">If <parameter>count</parameter> is greater than 1 and the
     indicated uniform variable is not an array, a
     <constant>GL_INVALID_OPERATION</constant> error is generated and the
     specified uniform variable will remain unchanged.</para>
+    <para lang="ja">
+    <parameter>count</parameter> が1より大きく、対象のユニフォーム変数が配列でない場合、
+    <constant>GL_INVALID_OPERATION</constant> エラーが生成され、指定されたユニフォーム変数は変更されません。
+    </para>
 
-    <para>Other than the preceding exceptions, if the type and size
+    <para lang="en">Other than the preceding exceptions, if the type and size
     of the uniform variable as defined in the shader do not match
     the type and size specified in the name of the command used to
     load its value, a <constant>GL_INVALID_OPERATION</constant> error will
     be generated and the specified uniform variable will remain
     unchanged.</para>
+    <para lang="ja">
+    上記の例外を除き、シェーダーで定義されたユニフォーム変数と、その値をロードするためのコマンドの名前で、型とサイズが一致しない場合、
+    <constant>GL_INVALID_OPERATION</constant> エラーが生成され、指定されたユニフォーム変数は変更されません。
+    </para>
 
-    <para>If <parameter>location</parameter> is a value other than
+    <para lang="en">If <parameter>location</parameter> is a value other than
     -1 and it does not represent a valid uniform variable location
     in the current program object, an error will be generated, and
     no changes will be made to the uniform variable storage of the
     current program object. If <parameter>location</parameter> is
     equal to -1, the data passed in will be silently ignored and the
     specified uniform variable will not be changed.</para>
+    <para lang="ja">
+    <parameter>location</parameter> が-1以外の値であり、<parameter>program</parameter> 内の有効なユニフォーム変数の場所を表していない場合は、
+    エラーが生成され、プログラムのユニフォーム変数ストレージは変更されません。
+    <parameter>location</parameter> が-1の場合、渡されたデータを渡しても通知なく無視され、指定されたユニフォーム変数は変更されません。
+    </para>
+
     </refsect1>
     <refsect1 xml:id="errors"><title>Errors</title>
     <para><constant>GL_INVALID_OPERATION</constant> is generated if there
