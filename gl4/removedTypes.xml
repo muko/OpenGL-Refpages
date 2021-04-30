@@ -15,10 +15,11 @@
     </refmeta>
     <refnamediv>
         <refname>removedTypes</refname>
-        <refpurpose>Describes types removed and replaced in the OpenGL API in OpenGL 4.2</refpurpose>
+        <refpurpose lang="en">Describes types removed and replaced in the OpenGL API in OpenGL 4.2</refpurpose>
+        <refpurpose lang="ja">OpenGL4.2 の OpenGLAPI で削除および置換された型について説明します</refpurpose>
     </refnamediv>
     <refsect1 xml:id="description"><title>Description</title>
-        <para>
+        <para lang="en">
             In the May, 2012 update of the OpenGL 4.2 Specification, all
             APIs using the types GLclampf and GLclampd were modified to
             use GLfloat and GLdouble, respectively, instead. Language
@@ -26,7 +27,13 @@
             parameters be clamped, when required, at use time rather
             than at specification time.
         </para>
-        <para>
+        <para lang="ja">
+            OpenGL 4.2 の仕様の2012年5月の更新では、型 GLclampf および GLclampd を使用するすべての API が、
+            それぞれ GLfloat および GLdouble を代わりに使用するように変更されました。
+            言語が仕様に追加され、必要に応じて、
+            仕様ではなく使用時にこれらのパラメーターをクランプする必要があります。
+        </para>
+        <para lang="en">
             This change allows specifying parameters in ranges
             appropriate for non-fixed-point framebuffers (integer and
             floating-point formats). The change does not require any
@@ -34,6 +41,11 @@
             actual underlying types are identical, the behavior is
             externally unchanged, and the header files continue to
             define the old types for compatibility with older code.
+        </para>
+        <para lang="ja">
+            この変更により、固定小数点以外のフレームバッファー（整数および浮動小数点形式）に適した範囲でパラメーターを指定できるようになります。
+            実際の基になる型は同一であり、動作は外部的に変更されておらず、ヘッダーファイルは古いコードとの互換性のために古い型を定義し続けるため、
+            この変更ではこれらの関数を呼び出すユーザーコードを変更する必要はありません。
         </para>
     </refsect1>
     <refsect1 xml:id="seealso"><title>See Also</title>

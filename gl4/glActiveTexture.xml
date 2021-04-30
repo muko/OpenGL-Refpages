@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glActiveTexture</refname>
-        <refpurpose>select active texture unit</refpurpose>
+        <refpurpose lang="en">select active texture unit</refpurpose>
+        <refpurpose lang="ja">アクティブなテクスチャーユニットを選択します</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -34,7 +35,7 @@
         <varlistentry>
             <term><parameter>texture</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies which texture unit to make active. The number
                     of texture units is implementation dependent, but must
                     be at least 80. <parameter>texture</parameter> must be
@@ -46,15 +47,26 @@
                     minus one. The initial value is
                     <constant>GL_TEXTURE0</constant>.
                 </para>
+                <para lang="ja">
+                    アクティブにするテクスチャーユニットを指定します。 
+                    テクスチャーユニットの数は実装によって異なりますが、少なくとも 80 である必要があります。
+                    <parameter>texture</parameter> は <constant>GL_TEXTURE</constant><emphasis>i</emphasis> のいずれかである必要があります。
+                    ここで、<emphasis>i</emphasis> の範囲は 0 から <constant>GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS</constant> の値から 1 を引いた値です。
+                    初期値は <constant>GL_TEXTURE0</constant> です。 
+                </para>
             </listitem>
         </varlistentry>
         </variablelist>
     </refsect1>
     <refsect1 xml:id="description"><title>Description</title>
-        <para>
+        <para lang="en">
             <function>glActiveTexture</function> selects which texture unit subsequent texture state calls will
             affect.  The number of texture units an implementation supports is
             implementation dependent, but must be at least 80.
+        </para>
+        <para lang="ja">
+            <function>glActiveTexture</function> は、後続のテクスチャー状態呼び出しが影響するテクスチャーユニットを選択します。
+            実装がサポートするテクスチャーユニットの数は実装によって異なりますが、少なくとも 80 である必要があります。
         </para>
     </refsect1>
     <refsect1 xml:id="errors"><title>Errors</title>

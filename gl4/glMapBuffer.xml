@@ -66,7 +66,7 @@
         <varlistentry>
             <term><parameter>access</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Specifies the access policy for
                     <function>glMapBuffer</function> and
                     <function>glMapNamedBuffer</function>, indicating
@@ -77,12 +77,22 @@
                     <constant>GL_WRITE_ONLY</constant>, or
                     <constant>GL_READ_WRITE</constant>.
                 </para>
+                <para lang="ja">
+                    <function>glMapBuffer</function> 及び
+                    <function>glMapNamedBuffer</function> のアクセスポリシーを指定し、
+                    バッファオブジェクトのマップされたデータストアからの読み取り、
+                    書き込み、または読み取りと書き込みの両方が可能かどうかを示します。
+                    シンボリック定数は、
+                    <constant>GL_READ_ONLY</constant> または
+                    <constant>GL_WRITE_ONLY</constant>、
+                    <constant>GL_READ_WRITE</constant> である必要があります。
+                </para>
             </listitem>
         </varlistentry>
         </variablelist>
     </refsect1>
     <refsect1 xml:id="description"><title>Description</title>
-        <para>
+        <para lang="en">
             <function>glMapBuffer</function> and
             <function>glMapNamedBuffer</function> map the entire data store
             of a specified buffer object into the client's address space.
@@ -90,7 +100,13 @@
             the returned pointer, depending on the specified
             <parameter>access</parameter> policy.
         </para>
-        <para>
+        <para lang="ja">
+            <function>glMapBuffer</function> と <function>glMapNamedBuffer</function> は、
+            指定されたバッファーオブジェクトのデータストア全体をクライアントのアドレス空間にマップします。
+            次に、<parameter>access</parameter> で指定されたポリシーに応じて、
+            返されたポインターを基準としてデータを直接読み取りおよび/または書き込むことができます。
+        </para>
+        <para lang="en">
             A pointer to the beginning of the mapped range is returned once
             all pending operations on that buffer object have completed, and
             may be used to modify and/or query the corresponding range of
@@ -117,6 +133,32 @@
                         <constant>GL_READ_WRITE</constant> indicates that
                         the returned pointer may be used to read and to
                         modify buffer object data.
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </para>
+        <para lang="ja">
+            マップされた範囲の先頭へのポインタは、
+            そのバッファオブジェクトに対するすべての保留中の操作が完了すると返され、
+            <parameter>access</parameter>の値に応じてデータストアの対応する範囲を変更および/またはクエリするために使用できます。
+
+            <itemizedlist>
+                <listitem>
+                    <para>
+                        <constant>GL_READ_ONLY</constant> は、
+                        返されたポインターを使用してバッファーオブジェクトデータを読み取れることを示します。
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <constant>GL_WRITE_ONLY</constant> は、
+                        返されたポインターを使用してバッファーオブジェクトデータを変更できることを示します。
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <constant>GL_READ_WRITE</constant> は、
+                        返されたポインターを使用して、バッファーオブジェクトデータを読み取ったり変更したりできることを示します。 
                     </para>
                 </listitem>
             </itemizedlist>

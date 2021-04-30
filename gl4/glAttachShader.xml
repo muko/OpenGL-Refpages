@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glAttachShader</refname>
-        <refpurpose>Attaches a shader object to a program object</refpurpose>
+        <refpurpose lang="en">Attaches a shader object to a program object</refpurpose>
+        <refpurpose lang="ja">シェーダーオブジェクトをプログラムオブジェクトにアタッチします</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -35,21 +36,23 @@
             <varlistentry>
                 <term><parameter>program</parameter></term>
                 <listitem>
-                    <para>Specifies the program object to which a shader
+                    <para lang="en">Specifies the program object to which a shader
                     object will be attached.</para>
+                    <para lang="ja">シェーダーオブジェクトをアタッチするプログラムオブジェクトを指定します。</para>
                 </listitem>
 
             </varlistentry>
             <varlistentry>
                 <term><parameter>shader</parameter></term>
                 <listitem>
-                    <para>Specifies the shader object that is to be attached.</para>
+                    <para lang="en">Specifies the shader object that is to be attached.</para>
+                    <para lang="ja">アタッチするシェーダーオブジェクトを指定します。</para>
                 </listitem>
             </varlistentry>
         </variablelist>
     </refsect1>
     <refsect1 xml:id="description"><title>Description</title>
-        <para>In order to create a complete shader program, there must be a way to
+        <para lang="en">In order to create a complete shader program, there must be a way to
         specify the list of things that will be linked together. Program
         objects provide this mechanism. Shaders that are to be linked
         together in a program object must first be attached to that
@@ -59,8 +62,13 @@
         indicates that <parameter>shader</parameter> will be included in
         link operations that will be performed on
         <parameter>program</parameter>.</para>
+        <para lang="ja">完全なシェーダープログラムを作成するには、リンクする対象を指定する必要があります。
+        プログラムオブジェクトはこのメカニズムを提供します。
+        プログラムオブジェクトにリンクされるシェーダーは、まずそのプログラムオブジェクトにアタッチする必要があります。 
+        <function>glAttachShader</function> は、 <parameter>shader</parameter> で指定されたシェーダーオブジェクトを、 <parameter>program</parameter> で指定されたプログラムオブジェクトにアタッチします。 
+        これは、 <parameter>program</parameter> のリンク操作に <parameter>shader</parameter> が含まれることを示しています。</para>
 
-        <para>All operations that can be performed on a shader object
+        <para lang="en">All operations that can be performed on a shader object
         are valid whether or not the shader object is attached to a
         program object. It is permissible to attach a shader object to a
         program object before source code has been loaded into the
@@ -74,6 +82,13 @@
         <citerefentry><refentrytitle>glDetachShader</refentrytitle></citerefentry>
         is called to detach it from all program objects to which it is
         attached.</para>
+        <para lang="ja">シェーダーオブジェクトで実行できるすべての操作は、シェーダーオブジェクトがプログラムオブジェクトにアタッチされているかどうかに関係なく有効です。
+        ソースコードがシェーダーオブジェクトに読み込まれる前、またはシェーダーオブジェクトがコンパイルされる前に、シェーダーオブジェクトをプログラムオブジェクトにアタッチできます。
+        完全なシェーダーとなる一部分がそれぞれのシェーダーオブジェクトに含まれている可能性があるため、同じタイプの複数のシェーダーオブジェクトをアタッチできます。
+        シェーダーオブジェクトを複数のプログラムオブジェクトにアタッチすることもできます。
+        シェーダーオブジェクトがプログラムオブジェクトにアタッチされている間に削除された場合は、削除のフラグが付けられ、
+        アタッチされているすべてのプログラムオブジェクトからアタッチが解除されるために <citerefentry><refentrytitle>glDetachShader</refentrytitle></citerefentry> が呼び出されるまで、削除は行われません。
+        </para>
     </refsect1>
     <refsect1 xml:id="errors"><title>Errors</title>
         <para><constant>GL_INVALID_VALUE</constant> is generated if either

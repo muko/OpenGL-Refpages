@@ -15,11 +15,12 @@
     </refmeta>
     <refnamediv>
         <refname>gl_Position</refname>
-        <refpurpose>contains the position of the current vertex</refpurpose>
+        <refpurpose lang="en">contains the position of the current vertex</refpurpose>
+        <refpurpose lang="ja">現在の頂点の位置が含まれています </refpurpose>
     </refnamediv>
     <refsynopsisdiv>
         <title>Declaration</title>
-        <para>
+        <para lang="en">
             <varname>gl_Position</varname> is a member of the
             <varname>gl_PerVertex</varname> named block:
 <programlisting>    out gl_PerVertex {
@@ -28,9 +29,18 @@
         float gl_ClipDistance[];
     };</programlisting>
         </para>
+        <para lang="ja">
+            <varname>gl_Position</varname> は
+            下記 <varname>gl_PerVertex</varname> のメンバーす。
+<programlisting>    out gl_PerVertex {
+        vec4 gl_Position;
+        float gl_PointSize;
+        float gl_ClipDistance[];
+    };</programlisting>
+        </para>
     </refsynopsisdiv>
     <refsect1 xml:id="description"><title>Description</title>
-        <para>
+        <para lang="en">
             In the vertex, tessellation evaluation and geometry languages, a single
             global instance of the <varname>gl_PerVertex</varname> named block is available and
             its <varname>gl_Position</varname> member is an output that receives the
@@ -38,6 +48,15 @@
             The value written to <varname>gl_Position</varname> will be used by primitive assembly,
             clipping, culling and other fixed functionality operations, if present, that operate on
             primitives after vertex processing has occurred.
+        </para>
+        <para lang="ja">
+            頂点、テッセレーション評価、ジオメトリーの言語に於いて、
+            <varname>gl_PerVertex</varname> という名前の単一のグローバルインスタンスが使用可能であり、
+            そのメンバーである <varname>gl_Position</varname> は受け取った同種の頂点位置を受け取って出力します。
+            シェーダー実行中にいつでも書き込めます。
+            <varname>gl_Position</varname> に書き込まれた値は、
+            プリミティブアセンブリ及びクリッピング、カリング、頂点処理が発生した後、
+            プリミティブを操作するその他の固定機能が存在すればその操作で使用されます。 
         </para>
         <para>
             In the tessellation control language, the <varname>gl_PerVertex</varname> named block

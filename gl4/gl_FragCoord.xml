@@ -15,7 +15,8 @@
     </refmeta>
     <refnamediv>
         <refname>gl_FragCoord</refname>
-        <refpurpose>contains the window-relative coordinates of the current fragment</refpurpose>
+        <refpurpose lang="en">contains the window-relative coordinates of the current fragment</refpurpose>
+        <refpurpose lang="ja">現在のフラグメントのウィンドウ相対座標が含まれます
     </refnamediv>
     <refsynopsisdiv>
         <title>Declaration</title>
@@ -26,13 +27,19 @@
         </fieldsynopsis>
     </refsynopsisdiv>
     <refsect1 xml:id="description"><title>Description</title>
-        <para>
+        <para lang="en">
             Available only in the fragment language, <varname>gl_FragCoord</varname> is an input variable that contains the
             window relative coordinate (x, y, z, 1/w) values for the fragment. If multi-sampling,
             this value can be for any location within the pixel, or one of the fragment samples.
             This value is the result of fixed functionality that interpolates primitives after vertex
             processing to generate fragments. The z component is the depth value that would be used for the
             fragment's depth if no shader contained any writes to <citerefentry><refentrytitle>gl_FragDepth</refentrytitle></citerefentry>.
+        </para>
+        <para lang="ja">
+            フラグメント言語でのみ使用可能な <varname>gl_FragCoord</varname> は、フラグメントのウィンドウ相対座標 (x, y, z, 1/w) 値を含む入力変数です。
+            マルチサンプリングの場合、この値は、ピクセル内の任意の場所、またはフラグメントサンプルの1つに適用できます。
+            この値は、頂点処理後にプリミティブを補間してフラグメントを生成する固定機能の結果です。
+            z コンポーネントは、シェーダーに <citerefentry><refentrytitle>gl_FragDepth</refentrytitle> への書き込みが含まれていない場合に、フラグメントの深度に使用される深度値です。 
         </para>
         <para>
             <varname>gl_FragCoord</varname> may be redeclared with the additional layout qualifier identifiers

@@ -19,7 +19,8 @@
     </refmeta>
     <refnamediv>
         <refname>glClear</refname>
-        <refpurpose>clear buffers to preset values</refpurpose>
+        <refpurpose lang="en">clear buffers to preset values</refpurpose>
+        <refpurpose lang="ja">バッファをプリセット値にクリアします</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
@@ -34,26 +35,39 @@
         <varlistentry>
             <term><parameter>mask</parameter></term>
             <listitem>
-                <para>
+                <para lang="en">
                     Bitwise OR of masks that indicate the buffers to be cleared.
                     The three masks are
                     <constant>GL_COLOR_BUFFER_BIT</constant>,
                     <constant>GL_DEPTH_BUFFER_BIT</constant>, and
                     <constant>GL_STENCIL_BUFFER_BIT</constant>.
                 </para>
+                <para lang="ja">
+                    クリアするバッファを示すマスクのビットのORを取ります。
+                    3つのマスクは、
+                    <constant>GL_COLOR_BUFFER_BIT</constant>、
+                    <constant>GL_DEPTH_BUFFER_BIT</constant>、
+                    <constant>GL_STENCIL_BUFFER_BIT</constant>です。
+                </para>
             </listitem>
         </varlistentry>
         </variablelist>
     </refsect1>
     <refsect1 xml:id="description"><title>Description</title>
-        <para>
+        <para lang="en">
             <function>glClear</function> sets the bitplane area of the window to values previously selected
             by <function>glClearColor</function>, <function>glClearDepth</function>, and
             <function>glClearStencil</function>.
             Multiple color buffers can be cleared simultaneously by selecting
             more than one buffer at a time using <citerefentry><refentrytitle>glDrawBuffer</refentrytitle></citerefentry>.
         </para>
-        <para>
+        <para lang="ja">
+            <function>glClear</function> は、ウィンドウのビットプレーン領域を、
+            <function>glClearColor</function>、<function>glClearDepth</function>、
+            <function>glClearStencil</function>によって以前選択された値を設定します。
+            <citerefentry><refentrytitle>glDrawBuffer</refentrytitle></citerefentry>を使用して一度に複数のバッファーを選択すれば、複数のカラーバッファーを同時にクリアできます。
+        </para>
+        <para lang="en">
             The pixel ownership test,
             the scissor test,
             dithering, and the buffer writemasks affect the operation of <function>glClear</function>.
@@ -65,49 +79,75 @@
             texture mapping,
             and depth-buffering are ignored by <function>glClear</function>.
         </para>
-        <para>
+        <para lang="ja">
+            ピクセル所有権テスト、シザーテスト、ディザリング、バッファー書き込みマスクは、<function>glClear</function>の動作に影響を与えます。 
+            シザーボックスは、クリアされた領域の境界を定めます。 
+            アルファ関数、ブレンド関数、論理演算、ステンシル、テクスチャマッピング、深度バッファリングは、<function>glClear</function>によって無視されます。
+        </para>
+        <para lang="en">
             <function>glClear</function> takes a single argument that is the bitwise OR of several
             values indicating which buffer is to be cleared.
         </para>
-        <para>
+        <para lang="ja">
+            <function>glClear</function>は、どのバッファをクリアするかを示すいくつかの値のビットごとのORである単一の引数を取ります。
+        </para>
+        <para lang="en">
             The values are as follows:
+        </para>
+        <para lang="ja">
+            値は下記のとおりです。
         </para>
         <variablelist>
             <varlistentry>
                 <term><constant>GL_COLOR_BUFFER_BIT</constant></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         Indicates the buffers currently enabled for color
                         writing.
+                    </para>
+                    <para lang="ja">
+                        現在色の書き込みが有効になっているバッファを示します。
                     </para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><constant>GL_DEPTH_BUFFER_BIT</constant></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         Indicates the depth buffer.
+                    </para>
+                    <para lang="ja">
+                        深度バッファを示します。
                     </para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term><constant>GL_STENCIL_BUFFER_BIT</constant></term>
                 <listitem>
-                    <para>
+                    <para lang="en">
                         Indicates the stencil buffer.
+                    </para>
+                    <para lang="ja">
+                        ステンシルバッファーを示します。
                     </para>
                 </listitem>
             </varlistentry>
         </variablelist>
-        <para>
+        <para lang="en">
             The value to which each buffer is cleared depends on the setting of the
             clear value for that buffer.
         </para>
+        <para lang="ja">
+            各バッファーがクリアされる値は、そのバッファーのクリア値の設定によって異なります。
+        </para>
     </refsect1>
     <refsect1 xml:id="notes"><title>Notes</title>
-        <para>
+        <para lang="en">
             If a buffer is not present,
             then a <function>glClear</function> directed at that buffer has no effect.
+        </para>
+        <para lang="ja">
+            バッファーが存在しない場合、<function>glClear</function> によるバッファーへの効果はありません。
         </para>
     </refsect1>
     <refsect1 xml:id="errors"><title>Errors</title>

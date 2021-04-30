@@ -28,7 +28,8 @@
 
     <refname>glNamedFramebufferDrawBuffer</refname>
 
-    <refpurpose>specify which color buffers are to be drawn into</refpurpose>
+    <refpurpose lang="en">specify which color buffers are to be drawn into</refpurpose>
+    <refpurpose lang="ja">描画するカラーバッファーを指定します</refpurpose>
   </refnamediv>
 
   <refsynopsisdiv>
@@ -59,9 +60,13 @@
         <term><parameter>framebuffer</parameter></term>
 
         <listitem>
-          <para>Specifies the name of the framebuffer object for
+          <para lang="en">Specifies the name of the framebuffer object for
           <function>glNamedFramebufferDrawBuffer</function> function. Must be
           zero or the name of a framebuffer object.</para>
+          <para lang="ja">
+          <function>glNamedFramebufferDrawBuffer</function> 関数ではフレームバッファーオブジェクトの名前を指定します。
+          0 またはフレームバッファーオブジェクトの名前である必要があります。 
+          </para>
         </listitem>
       </varlistentry>
 
@@ -69,7 +74,7 @@
         <term><parameter>buf</parameter></term>
 
         <listitem>
-          <para>For default framebuffer, the argument specifies up to four
+          <para lang="en">For default framebuffer, the argument specifies up to four
           color buffers to be drawn into. Symbolic constants
           <constant>GL_NONE</constant>, <constant>GL_FRONT_LEFT</constant>,
           <constant>GL_FRONT_RIGHT</constant>,
@@ -84,6 +89,24 @@
           <constant>GL_NONE</constant> enums are accepted, where
           <constant>$m$</constant> is a value between 0 and
           <constant>GL_MAX_COLOR_ATTACHMENTS</constant>.</para>
+          <para lang="ja">デフォルトのフレームバッファーの場合、引数は最大4つのカラーバッファーを指定します。 
+          シンボリック定数
+          <constant>GL_NONE</constant>、
+          <constant>GL_FRONT_LEFT</constant>、
+          <constant>GL_FRONT_RIGHT</constant>、
+          <constant>GL_BACK_LEFT</constant>、
+          <constant>GL_BACK_RIGHT</constant>、
+          <constant>GL_FRONT</constant>、
+          <constant>GL_BACK</constant>、
+          <constant>GL_LEFT</constant>、
+          <constant>GL_RIGHT</constant>、
+          <constant>GL_FRONT_AND_BACK</constant>
+          が受け入れられます。
+          初期値は、シングルバッファーコンテキストの場合は <constant>GL_FRONT</constant>、
+          ダブルバッファーコンテキストの場合は <constant>GL_BACK</constant> です。
+          フレームバッファオブジェクトの場合、<constant>GL_COLOR_ATTACHMENT$m$</constant> および<constant>GL_NONE</constant>が受け入れられます。
+          このとき <constant>$m$</constant> は 0 から <constant>GL_MAX_COLOR_ATTACHMENTS</constant> までの値です。
+          </para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -92,9 +115,13 @@
   <refsect1 xml:id="description">
     <title>Description</title>
 
-    <para>When colors are written to the frame buffer, they are written into
+    <para lang="en">When colors are written to the frame buffer, they are written into
     the color buffers specified by <function>glDrawBuffer</function>. One of
     the following values can be used for default framebuffer:</para>
+    <para lang="ja">
+    色がフレームバッファーに書き込まれると、 <function>glDrawBuffer</function> で指定されたカラーバッファーに書き込まれます。
+    デフォルトのフレームバッファーには、次のいずれかの値を使用できます。 
+    <para>
 
     <variablelist>
       <varlistentry>

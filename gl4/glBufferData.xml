@@ -26,8 +26,9 @@
 
     <refname>glNamedBufferData</refname>
 
-    <refpurpose>creates and initializes a buffer object's data
+    <refpurpose lang="en">creates and initializes a buffer object's data
     store</refpurpose>
+    <refpurpose lang="ja">バッファーオブジェクトのデータストアを作成して初期化します</refpurpose>
   </refnamediv>
 
   <refsynopsisdiv>
@@ -68,10 +69,14 @@
         <term><parameter>target</parameter></term>
 
         <listitem>
-          <para>
+          <para lang="en">
             Specifies the target to which the buffer object is bound for
             <function>glBufferData</function>, which must be one of the
             buffer binding targets in the following table:
+          </para>
+          <para lang="ja">
+            バッファーオブジェクトが <function>glBufferData</function> にバインドされる対象を指定します。
+            これは、下記の表のバッファーバインド対象の1つである必要があります。
           </para>
           <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="bufferbindings.xml"/>
         </listitem>
@@ -81,8 +86,9 @@
         <term><parameter>buffer</parameter></term>
 
         <listitem>
-          <para>Specifies the name of the buffer object for
+          <para lang="en">Specifies the name of the buffer object for
           <function>glNamedBufferData</function> function.</para>
+          <para lang="ja"><function>glNamedBufferData</function> 関数のバッファーオブジェクトの名前を指定します。</para>
         </listitem>
       </varlistentry>
 
@@ -90,8 +96,9 @@
         <term><parameter>size</parameter></term>
 
         <listitem>
-          <para>Specifies the size in bytes of the buffer object's new data
+          <para lang="en">Specifies the size in bytes of the buffer object's new data
           store.</para>
+          <para lang="ja">バッファーオブジェクトの新しいデータストアのサイズをバイト単位で指定します。</para>
         </listitem>
       </varlistentry>
 
@@ -99,9 +106,12 @@
         <term><parameter>data</parameter></term>
 
         <listitem>
-          <para>Specifies a pointer to data that will be copied into the data
+          <para lang="en">Specifies a pointer to data that will be copied into the data
           store for initialization, or <constant>NULL</constant> if no data is
           to be copied.</para>
+          <para lang="ja">初期化のためにデータストアにコピーされるデータへのポインターを指定します。
+          データがコピーされない場合は <constant>NULL</constant> を指定します。
+          </para>
         </listitem>
       </varlistentry>
 
@@ -109,7 +119,7 @@
         <term><parameter>usage</parameter></term>
 
         <listitem>
-          <para>Specifies the expected usage pattern of the data store. The
+          <para lang="en">Specifies the expected usage pattern of the data store. The
           symbolic constant must be <constant>GL_STREAM_DRAW</constant>,
           <constant>GL_STREAM_READ</constant>,
           <constant>GL_STREAM_COPY</constant>,
@@ -119,6 +129,17 @@
           <constant>GL_DYNAMIC_DRAW</constant>,
           <constant>GL_DYNAMIC_READ</constant>, or
           <constant>GL_DYNAMIC_COPY</constant>.</para>
+          <para lang="ja">データストアの予想される使用パターンを指定します。
+          シンボリック定数は、
+          <constant>GL_STREAM_DRAW</constant>、または
+          <constant>GL_STREAM_READ</constant>、
+          <constant>GL_STREAM_COPY</constant>、
+          <constant>GL_STATIC_DRAW</constant>、
+          <constant>GL_STATIC_READ</constant>、
+          <constant>GL_STATIC_COPY</constant>、
+          <constant>GL_DYNAMIC_DRAW</constant>、
+          <constant>GL_DYNAMIC_READ</constant>、
+          <constant>GL_DYNAMIC_COPY</constant>である必要があります。</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -127,13 +148,18 @@
   <refsect1 xml:id="description">
     <title>Description</title>
 
-    <para><function>glBufferData</function> and
+    <para lang="en"><function>glBufferData</function> and
     <function>glNamedBufferData</function> create a new data store for a
     buffer object. In case of <function>glBufferData</function>, the buffer
     object currently bound to <parameter>target</parameter> is used. For
     <function>glNamedBufferData</function>, a buffer object associated with ID
     specified by the caller in <parameter>buffer</parameter> will be used
     instead.</para>
+    <para lang="ja"><function>glBufferData</function> と
+    <function>glNamedBufferData</function> は、バッファーオブジェクトの新しいデータストアを作成します。
+    <function>glBufferData</function> の場合、現在<parameter>target</parameter>にバインドされているバッファーオブジェクトが使用されます。
+    <function>glNamedBufferData</function> の場合、代わりに、呼び出し元が <parameter>buffer</parameter> で指定したIDに関連付けられたバッファーオブジェクトが使用されます。 
+    </para>
 
     <para>While creating the new storage, any pre-existing data store is
     deleted. The new data store is created with the specified
